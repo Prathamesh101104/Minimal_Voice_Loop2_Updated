@@ -95,7 +95,7 @@ curl -X POST https://api.vobiz.ai/api/v1/Account/YOUR_AUTH_ID/Call/ \
   -d '{
     "from": "+918011223344",
     "to": "+919148112233",
-    "answer_url": "https://your-ngrok-url.ngrok-free.app/answer",
+    "answer_url": "https://footrest-scientist-consonant.ngrok-free.dev/answer",
     "answer_method": "POST"
   }'
 ```

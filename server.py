@@ -20,6 +20,9 @@ from fastapi import FastAPI, HTTPException, Query, Request, WebSocket
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, JSONResponse
 
+from bot import bot
+from pipecat.runner.types import WebSocketRunnerArguments
+
 load_dotenv(override=True)
 
 
@@ -51,7 +54,7 @@ async def make_vobiz_call(
     print(f"[DEBUG] Auth ID: {auth_id}")
     # Log only the last 4 chars so we can tell tokens apart in logs without
     # leaking ~50% of the secret. Drop the whole line if even that is too much.
-    print(f"[DEBUG] Auth Token: …{auth_token[-4:]}")
+    print(f"[DEBUG] Auth Token: ...{auth_token[-4:]}")
 
     headers = {
         "Content-Type": "application/json",
@@ -150,9 +153,9 @@ def get_host_and_protocol(request: Request = None):
 
         # Warn if using localhost without PUBLIC_URL set
         if host.startswith("localhost") or host.startswith("127.0.0.1"):
-            print("[WARNING] ⚠️  Using localhost for URL!")
-            print("[WARNING] ⚠️  Vobiz will NOT be able to reach this URL!")
-            print("[WARNING] ⚠️  Solution: Set PUBLIC_URL in .env")
+            print("[WARNING] [WARN]  Using localhost for URL!")
+            print("[WARNING] [WARN]  Vobiz will NOT be able to reach this URL!")
+            print("[WARNING] [WARN]  Solution: Set PUBLIC_URL in .env")
 
         print(f"[DEBUG] Detected protocol: {protocol}")
         return host, protocol
@@ -177,7 +180,7 @@ def get_websocket_url(host: str):
         return prod_ws_url
     else:
         # Return WebSocket URL for local/ngrok deployment
-        return f"wss://{host}/ws"
+        return f"wss://{host}/voice/ws"
 
 
 # ----------------- API ----------------- #
@@ -193,6 +196,14 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(lifespan=lifespan)
+
+
+@app.middleware("http")
+async def add_ngrok_header(request: Request, call_next):
+    response = await call_next(request)
+    response.headers["ngrok-skip-browser-warning"] = "true"
+    return response
+
 
 app.add_middleware(
     CORSMiddleware,
@@ -295,6 +306,8 @@ async def initiate_outbound_call(request: Request) -> JSONResponse:
 
 
 @app.api_route("/answer", methods=["GET", "POST"])
+@app.api_route("/answe/answer", methods=["GET", "POST"])
+@app.api_route("/answer/", methods=["GET", "POST"])
 async def get_answer_xml(
     request: Request,
     CallUUID: str = Query(None, description="Vobiz call UUID"),
@@ -302,7 +315,17 @@ async def get_answer_xml(
 ) -> HTMLResponse:
     """Return XML instructions for connecting call to WebSocket or transferring to human."""
     print("\n[ANSWER] ========== ANSWER XML REQUEST ==========")
-    print(f"[ANSWER] Call UUID: {CallUUID}")
+
+    # Extract CallUUID from Query param or POST Form data
+    call_uuid = CallUUID or request.query_params.get("CallUUID") or request.query_params.get("call_uuid")
+    if not call_uuid and request.method == "POST":
+        try:
+            form = await request.form()
+            call_uuid = form.get("CallUUID") or form.get("call_uuid")
+        except Exception:
+            pass
+
+    print(f"[ANSWER] Call UUID: {call_uuid}")
 
     # Parse body data from query parameter
     parsed_body_data = {}
@@ -313,12 +336,12 @@ async def get_answer_xml(
             print(f"[ANSWER] Failed to parse body data: {body_data}")
 
     # Check if this call is marked for transfer
-    if CallUUID and CallUUID in active_calls:
-        call_info = active_calls[CallUUID]
+    if call_uuid and call_uuid in active_calls:
+        call_info = active_calls[call_uuid]
         if call_info.get("transfer_requested"):
-            print(f"[ANSWER] 🔄 Call {CallUUID} is marked for transfer - returning Dial XML")
+            print(f"[ANSWER] [XFER] Call {call_uuid} is marked for transfer - returning Dial XML")
 
-            # Get transfer destination from env. No hardcoded default — fail loud.
+            # Get transfer destination from env. No hardcoded default -- fail loud.
             agent_number = os.getenv("TRANSFER_AGENT_NUMBER")
             if not agent_number:
                 raise HTTPException(
@@ -349,7 +372,7 @@ async def get_answer_xml(
     print(f"[ANSWER] Normal call flow - returning Stream XML")
 
     # Log call details
-    if CallUUID:
+    if call_uuid:
         if parsed_body_data:
             print(f"[ANSWER] Body data: {parsed_body_data}")
 
@@ -372,6 +395,9 @@ async def get_answer_xml(
             service_host = f"{agent_name}.{org_name}"
             query_params.append(f"serviceHost={service_host}")
 
+        if call_uuid:
+            query_params.append(f"call_uuid={call_uuid}")
+
         # Add body data if available
         if parsed_body_data:
             body_json = json.dumps(parsed_body_data)
@@ -389,36 +415,13 @@ async def get_answer_xml(
         print(f"[INFO] Host: {host}, Environment: {env}")
 
         # Generate XML response for Vobiz
+        enable_recording = os.getenv("ENABLE_RECORDING", "false").lower() == "true"
+        max_recording_length = os.getenv("MAX_RECORDING_LENGTH", "3600")
 
-        # Check if recording is enabled
-        enable_recording = os.getenv("ENABLE_RECORDING", "true").lower() == "true"
-        max_recording_length = os.getenv("MAX_RECORDING_LENGTH", "3600")  # Default: 1 hour
-
-        # Build Record element if recording is enabled
+        # Build Record element only if explicitly enabled and non-blocking (redirect="false")
         record_element = ""
-        # if enable_recording:
-        # User requested specific hardcoded XML structure
-        # record_action_url = f"{protocol}://{host}/recording-finished"
-        # record_callback_url = f"{protocol}://{host}/recording-ready"
-
-        record_element = f"""
-        <Record fileFormat="wav" maxLength="3600" recordSession="true" callbackUrl="{protocol}://{host}/recording-ready" callbackMethod="POST">
-        </Record>"""
-
-        #     print(f"[INFO] Using user-requested hardcoded recording element")
-        # else:
-        #     print(f"[INFO] Recording disabled (ENABLE_RECORDING=false)")
-
-        # Use user-requested XML structure with specific params
-        # Note: We still need to inject the ws_url dynamic parameters if we want it to work with our bot
-        # But user asked for specific format. combining the two:
-        # Re-building correct WS URL to match user request pattern but with actual dynamic values where needed
-        ws_url_base = f"wss://{host}/voice/ws"
-        
-        # Use existing query_params populated earlier (lines 350-364)
-        # Note: query_params already contains serviceHost (if prod) and body (if present)
-        
-        final_ws_url = f"{ws_url_base}?{'&'.join(query_params)}" if query_params else ws_url_base
+        if enable_recording:
+            record_element = f'\n    <Record fileFormat="wav" maxLength="{max_recording_length}" recordSession="true" redirect="false" callbackUrl="{protocol}://{host}/recording-ready" callbackMethod="POST" />'
 
         vobiz_encoding = os.getenv("VOBIZ_ENCODING", "audio/x-mulaw")
         vobiz_rate = int(os.getenv("VOBIZ_SAMPLE_RATE", "8000"))
@@ -426,11 +429,8 @@ async def get_answer_xml(
         print(f"[INFO] Vobiz wire format: {vobiz_content_type}")
 
         xml_content = f"""<?xml version="1.0" encoding="UTF-8"?>
-<Response>
-{record_element}
-        <Stream bidirectional="true" audioTrack="inbound" contentType="{vobiz_content_type}" keepCallAlive="true">
-            {final_ws_url}
-        </Stream>
+<Response>{record_element}
+    <Stream bidirectional="true" contentType="{vobiz_content_type}" keepCallAlive="true">{ws_url}</Stream>
 </Response>"""
 
         print(f"[DEBUG] XML Response:\n{xml_content}")
@@ -460,9 +460,12 @@ async def recording_finished(request: Request) -> HTMLResponse:
     recording_end_ms = data.get("RecordingEndMs")
     recording_end_reason = data.get("RecordingEndReason")
 
+    recording_filename = f"{recording_id}.mp3" if recording_id else "unknown.mp3"
+
+    print(f"[RECORDING] File Name: {recording_filename}")
+    print(f"[RECORDING] Recording ID: {recording_id}")
     print(f"[RECORDING] Recording URL: {recording_url}")
     print(f"[RECORDING] Duration: {duration} seconds ({duration_ms} ms)")
-    print(f"[RECORDING] Recording ID: {recording_id}")
     print(f"[RECORDING] Call UUID: {call_uuid}")
     print(f"[RECORDING] End Reason: {recording_end_reason}")
     print(f"[RECORDING] Start Time: {recording_start_ms}")
@@ -472,19 +475,14 @@ async def recording_finished(request: Request) -> HTMLResponse:
     if call_uuid and call_uuid in active_calls:
         active_calls[call_uuid]["recording_id"] = recording_id
         active_calls[call_uuid]["recording_url"] = recording_url
-        print(f"[RECORDING] ✅ Stored recording ID {recording_id} for call {call_uuid}")
+        active_calls[call_uuid]["recording_filename"] = recording_filename
+        print(f"[RECORDING] [OK] Stored recording ID {recording_id} for call {call_uuid}")
     else:
-        print(f"[RECORDING] ⚠️  Call {call_uuid} not found in active_calls (may have ended)")
+        print(f"[RECORDING] [WARN]  Call {call_uuid} not found in active_calls (may have ended)")
 
-    # Optional: Download the recording
-    # if recording_url:
-    #     async with aiohttp.ClientSession() as session:
-    #         async with session.get(recording_url) as resp:
-    #             audio_data = await resp.read()
-    #             with open(f"recordings/{recording_id}.mp3", "wb") as f:
-    #                 f.write(audio_data)
-    #     print(f"[RECORDING] Downloaded to recordings/{recording_id}.mp3")
-
+    print(f"\n========================================================")
+    print(f"🎙️  CURRENT RECORDING FILE: {recording_filename}")
+    print(f"========================================================\n")
     print("[RECORDING] ========== RECORDING FINISHED END ==========\n")
 
     # Return empty XML response
@@ -502,8 +500,10 @@ async def recording_ready(request: Request) -> HTMLResponse:
     recording_url = data.get("RecordUrl")
     recording_id = data.get("RecordingID")
     call_uuid = data.get("CallUUID")
+    recording_filename = f"{recording_id}.mp3" if recording_id else "unknown.mp3"
 
     print(f"[RECORDING CALLBACK] Recording file is ready for download!")
+    print(f"[RECORDING CALLBACK] File Name: {recording_filename}")
     print(f"[RECORDING CALLBACK] URL: {recording_url}")
     print(f"[RECORDING CALLBACK] Recording ID: {recording_id}")
     print(f"[RECORDING CALLBACK] Call UUID: {call_uuid}")
@@ -529,17 +529,22 @@ async def recording_ready(request: Request) -> HTMLResponse:
                 async with session.get(recording_url, headers=headers) as resp:
                     if resp.status == 200:
                         audio_data = await resp.read()
-                        filename = f"recordings/{recording_id}.mp3"
-                        with open(filename, "wb") as f:
+                        filepath = f"recordings/{recording_filename}"
+                        with open(filepath, "wb") as f:
                             f.write(audio_data)
-                        print(f"[RECORDING CALLBACK] ✅ Downloaded to {filename}")
-                        print(f"[RECORDING CALLBACK] File size: {len(audio_data)} bytes")
+                        abs_filepath = os.path.abspath(filepath)
+                        print(f"\n========================================================")
+                        print(f"🎙️  RECORDING DOWNLOADED SUCCESSFULLY!")
+                        print(f"📄  File Name: {recording_filename}")
+                        print(f"📁  Saved At:  {abs_filepath}")
+                        print(f"📦  File Size: {len(audio_data):,} bytes")
+                        print(f"========================================================\n")
                     else:
-                        print(f"[RECORDING CALLBACK] ❌ Download failed: HTTP {resp.status}")
+                        print(f"[RECORDING CALLBACK] [FAIL] Download failed: HTTP {resp.status}")
                         error_text = await resp.text()
                         print(f"[RECORDING CALLBACK] Error: {error_text}")
         except Exception as e:
-            print(f"[RECORDING CALLBACK] ❌ Error downloading recording: {e}")
+            print(f"[RECORDING CALLBACK] [FAIL] Error downloading recording: {e}")
             import traceback
             print(f"[RECORDING CALLBACK] Traceback:\n{traceback.format_exc()}")
 
@@ -646,7 +651,7 @@ async def initiate_transfer(request: Request) -> JSONResponse:
 
                 if resp.status == 202:  # 202 Accepted
                     result = json.loads(response_text)
-                    print(f"[TRANSFER] ✅ Transfer API call successful!")
+                    print(f"[TRANSFER] [OK] Transfer API call successful!")
                     print(f"[TRANSFER] Vobiz should now fetch XML from {transfer_url}")
                     print("[TRANSFER] ========== INITIATE TRANSFER END ==========\n")
 
@@ -657,7 +662,7 @@ async def initiate_transfer(request: Request) -> JSONResponse:
                         "vobiz_response": result
                     })
                 else:
-                    print(f"[TRANSFER] ❌ Transfer failed!")
+                    print(f"[TRANSFER] [FAIL] Transfer failed!")
                     print("[TRANSFER] ========== INITIATE TRANSFER END (FAILED) ==========\n")
                     raise HTTPException(
                         status_code=resp.status,
@@ -665,7 +670,7 @@ async def initiate_transfer(request: Request) -> JSONResponse:
                     )
 
     except Exception as e:
-        print(f"[TRANSFER] ❌ Error during transfer: {e}")
+        print(f"[TRANSFER] [FAIL] Error during transfer: {e}")
         import traceback
         print(f"[TRANSFER] Traceback:\n{traceback.format_exc()}")
         print("[TRANSFER] ========== INITIATE TRANSFER END (ERROR) ==========\n")
@@ -685,7 +690,8 @@ async def get_active_calls() -> JSONResponse:
             "started_at": call_data.get("started_at"),
             "path": call_data.get("path"),
             "recording_id": call_data.get("recording_id"),  # Include recording ID if available
-            "recording_url": call_data.get("recording_url")  # Include recording URL if available
+            "recording_url": call_data.get("recording_url"),  # Include recording URL if available
+            "recording_filename": call_data.get("recording_filename"),  # Include recording filename if available
             # Exclude 'websocket' as it's not JSON serializable
         }
 
@@ -733,13 +739,9 @@ async def handle_vobiz_websocket(
     call_uuid = None
 
     try:
-        # Import the bot function from the bot module
-        from bot import bot
-        from pipecat.runner.types import WebSocketRunnerArguments
-
         print("[DEBUG] Starting bot initialization...")
 
-        # Do NOT call parse_telephony_websocket(websocket) here — it consumes
+        # Do NOT call parse_telephony_websocket(websocket) here -- it consumes
         # the initial handshake messages and leaves the socket "empty" for
         # the Pipecat transport. bot.py uses parse_vobiz_start() instead,
         # which captures the negotiated mediaFormat AND the stream/call IDs.
@@ -756,7 +758,7 @@ async def handle_vobiz_websocket(
                 active_calls[call_uuid]["status"] = "active"
                 active_calls[call_uuid]["websocket"] = websocket
                 active_calls[call_uuid]["path"] = path
-                print(f"[CALL] ✅ Updated existing call {call_uuid} with WebSocket")
+                print(f"[CALL] [OK] Updated existing call {call_uuid} with WebSocket")
             else:
                 # Create new entry
                 active_calls[call_uuid] = {
@@ -766,11 +768,11 @@ async def handle_vobiz_websocket(
                     "websocket": websocket,
                     "transfer_requested": False
                 }
-                print(f"[CALL] ✅ Created new call entry for {call_uuid}")
+                print(f"[CALL] [OK] Created new call entry for {call_uuid}")
 
             print(f"[CALL] Active calls count: {len(active_calls)}")
         else:
-            print("[CALL] ⚠️  No call UUID found in URL query params")
+            print("[CALL] [WARN]  No call UUID found in URL query params")
 
         # Create runner arguments and run the bot
         runner_args = WebSocketRunnerArguments(websocket=websocket)
@@ -796,13 +798,13 @@ async def handle_vobiz_websocket(
         if call_uuid and call_uuid in active_calls:
             call_status = active_calls[call_uuid].get("status", "active")
             if call_status == "transferring":
-                print(f"[CALL] 🔄 Call {call_uuid} is being transferred - keeping in active_calls")
+                print(f"[CALL] [XFER] Call {call_uuid} is being transferred - keeping in active_calls")
                 # Remove websocket reference but keep call record for transfer
                 active_calls[call_uuid]["websocket"] = None
             else:
                 # Normal call end - remove completely
                 del active_calls[call_uuid]
-                print(f"[CALL] 🔴 Removed call UUID: {call_uuid}")
+                print(f"[CALL] [END] Removed call UUID: {call_uuid}")
                 print(f"[CALL] Active calls count: {len(active_calls)}")
 
 
@@ -845,6 +847,46 @@ async def websocket_stream(
 ):
     """Handle WebSocket connection at /stream path."""
     await handle_vobiz_websocket(websocket, "/stream", body, serviceHost)
+
+
+# ----------------- OBSERVABILITY & EVALS API ----------------- #
+
+
+@app.get("/evals/latest")
+async def get_latest_eval():
+    """Returns the most recent call quality scorecard."""
+    evals_dir = "logs/evals"
+    if not os.path.exists(evals_dir):
+        return JSONResponse({"error": "No evaluations found"}, status_code=404)
+    files = sorted(
+        [os.path.join(evals_dir, f) for f in os.listdir(evals_dir) if f.endswith("_scorecard.json")],
+        key=os.path.getmtime,
+        reverse=True,
+    )
+    if not files:
+        return JSONResponse({"error": "No scorecards generated yet"}, status_code=404)
+    with open(files[0], "r", encoding="utf-8") as f:
+        return JSONResponse(json.load(f))
+
+
+@app.get("/evals/{call_id}")
+async def get_call_eval(call_id: str):
+    """Returns evaluation scorecard for a specific call."""
+    eval_file = os.path.join("logs/evals", f"{call_id}_scorecard.json")
+    if not os.path.exists(eval_file):
+        return JSONResponse({"error": f"Evaluation for call {call_id} not found"}, status_code=404)
+    with open(eval_file, "r", encoding="utf-8") as f:
+        return JSONResponse(json.load(f))
+
+
+@app.get("/telemetry/{call_id}")
+async def get_call_telemetry(call_id: str):
+    """Returns detailed turn-by-turn latency telemetry for a specific call."""
+    tel_file = os.path.join("logs/calls", f"{call_id}.json")
+    if not os.path.exists(tel_file):
+        return JSONResponse({"error": f"Telemetry for call {call_id} not found"}, status_code=404)
+    with open(tel_file, "r", encoding="utf-8") as f:
+        return JSONResponse(json.load(f))
 
 
 # ----------------- Main ----------------- #

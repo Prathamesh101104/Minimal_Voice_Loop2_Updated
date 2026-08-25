@@ -21,9 +21,25 @@ env/
 
 # Logs
 *.log
+logs/
 
 # Recordings
 recordings/
+
+# Scratch / test scripts
+scratch/
+
+# Observability cache
+observability/__pycache__/
+
+# Secrets & credentials (safety net)
+*.pem
+*.key
+*.p12
+*.pfx
+*.json.bak
+credentials.json
+service-account*.json
 
 # OS
 .DS_Store

@@ -19,3 +19,5 @@ python-dotenv
 
 # Logging
 loguru
+
+google-genai
