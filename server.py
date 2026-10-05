@@ -9,9 +9,20 @@ and handle subsequent WebSocket connections for Media Streams.
 import base64
 import json
 import os
+import sys
 import urllib.parse
 from contextlib import asynccontextmanager
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
+
+# IST = UTC+05:30
+_IST = timezone(timedelta(hours=5, minutes=30))
+
+if sys.platform == "win32":
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+        sys.stderr.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
 
 import aiohttp
 import uvicorn
@@ -20,7 +31,7 @@ from fastapi import FastAPI, HTTPException, Query, Request, WebSocket
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, JSONResponse
 
-from bot import bot
+from bot import bot, close_sarvam_session
 from pipecat.runner.types import WebSocketRunnerArguments
 
 load_dotenv(override=True)
@@ -193,6 +204,10 @@ async def lifespan(app: FastAPI):
     yield
     # Close session when shutting down
     await app.state.session.close()
+    try:
+        await close_sarvam_session()
+    except Exception:
+        pass
 
 
 app = FastAPI(lifespan=lifespan)
@@ -460,7 +475,15 @@ async def recording_finished(request: Request) -> HTMLResponse:
     recording_end_ms = data.get("RecordingEndMs")
     recording_end_reason = data.get("RecordingEndReason")
 
-    recording_filename = f"{recording_id}.mp3" if recording_id else "unknown.mp3"
+    time_str = datetime.now(_IST).strftime("%Y-%m-%d_%H-%M-%S")
+    if call_uuid and recording_id:
+        recording_filename = f"{time_str}_{call_uuid}_{recording_id}.mp3"
+    elif recording_id:
+        recording_filename = f"{time_str}_{recording_id}.mp3"
+    elif call_uuid:
+        recording_filename = f"{time_str}_{call_uuid}.mp3"
+    else:
+        recording_filename = f"{time_str}_unknown.mp3"
 
     print(f"[RECORDING] File Name: {recording_filename}")
     print(f"[RECORDING] Recording ID: {recording_id}")
@@ -500,7 +523,22 @@ async def recording_ready(request: Request) -> HTMLResponse:
     recording_url = data.get("RecordUrl")
     recording_id = data.get("RecordingID")
     call_uuid = data.get("CallUUID")
-    recording_filename = f"{recording_id}.mp3" if recording_id else "unknown.mp3"
+
+    if call_uuid and call_uuid in active_calls and active_calls[call_uuid].get("recording_filename"):
+        recording_filename = active_calls[call_uuid]["recording_filename"]
+    else:
+        time_str = datetime.now(_IST).strftime("%Y-%m-%d_%H-%M-%S")
+        if call_uuid and recording_id:
+            recording_filename = f"{time_str}_{call_uuid}_{recording_id}.mp3"
+        elif recording_id:
+            recording_filename = f"{time_str}_{recording_id}.mp3"
+        elif call_uuid:
+            recording_filename = f"{time_str}_{call_uuid}.mp3"
+        else:
+            recording_filename = f"{time_str}_unknown.mp3"
+
+    if call_uuid and call_uuid in active_calls:
+        active_calls[call_uuid]["recording_filename"] = recording_filename
 
     print(f"[RECORDING CALLBACK] Recording file is ready for download!")
     print(f"[RECORDING CALLBACK] File Name: {recording_filename}")
@@ -851,42 +889,46 @@ async def websocket_stream(
 
 # ----------------- OBSERVABILITY & EVALS API ----------------- #
 
+from evals.store import (
+    get_all_calls_summary,
+    get_latest_scorecard,
+    get_scorecard,
+    get_telemetry,
+)
+
 
 @app.get("/evals/latest")
 async def get_latest_eval():
     """Returns the most recent call quality scorecard."""
-    evals_dir = "logs/evals"
-    if not os.path.exists(evals_dir):
-        return JSONResponse({"error": "No evaluations found"}, status_code=404)
-    files = sorted(
-        [os.path.join(evals_dir, f) for f in os.listdir(evals_dir) if f.endswith("_scorecard.json")],
-        key=os.path.getmtime,
-        reverse=True,
-    )
-    if not files:
+    data = get_latest_scorecard()
+    if not data:
         return JSONResponse({"error": "No scorecards generated yet"}, status_code=404)
-    with open(files[0], "r", encoding="utf-8") as f:
-        return JSONResponse(json.load(f))
+    return JSONResponse(data)
+
+
+@app.get("/evals/summary")
+async def get_evals_summary(limit: int = 50):
+    """Returns global aggregate statistics across all recorded calls."""
+    summary = get_all_calls_summary(limit=limit)
+    return JSONResponse(summary)
 
 
 @app.get("/evals/{call_id}")
 async def get_call_eval(call_id: str):
     """Returns evaluation scorecard for a specific call."""
-    eval_file = os.path.join("logs/evals", f"{call_id}_scorecard.json")
-    if not os.path.exists(eval_file):
+    data = get_scorecard(call_id)
+    if not data:
         return JSONResponse({"error": f"Evaluation for call {call_id} not found"}, status_code=404)
-    with open(eval_file, "r", encoding="utf-8") as f:
-        return JSONResponse(json.load(f))
+    return JSONResponse(data)
 
 
 @app.get("/telemetry/{call_id}")
 async def get_call_telemetry(call_id: str):
     """Returns detailed turn-by-turn latency telemetry for a specific call."""
-    tel_file = os.path.join("logs/calls", f"{call_id}.json")
-    if not os.path.exists(tel_file):
+    data = get_telemetry(call_id)
+    if not data:
         return JSONResponse({"error": f"Telemetry for call {call_id} not found"}, status_code=404)
-    with open(tel_file, "r", encoding="utf-8") as f:
-        return JSONResponse(json.load(f))
+    return JSONResponse(data)
 
 
 # ----------------- Main ----------------- #

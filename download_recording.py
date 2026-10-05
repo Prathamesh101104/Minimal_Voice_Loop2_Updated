@@ -21,13 +21,19 @@ AUTH_TOKEN = os.getenv("VOBIZ_AUTH_TOKEN")
 OUTPUT_DIR = Path(__file__).parent / "manual_record"
 
 
+from datetime import datetime, timezone, timedelta
+
+# IST = UTC+05:30
+_IST = timezone(timedelta(hours=5, minutes=30))
+
+
 def download_recording(url: str, filename: str = None) -> str:
     """
     Download a recording from Vobiz media server.
     
     Args:
         url: The full URL of the recording to download
-        filename: Optional custom filename. If not provided, extracts from URL.
+        filename: Optional custom filename. If not provided, extracts from URL with timestamp.
     
     Returns:
         Path to the downloaded file
@@ -38,14 +44,17 @@ def download_recording(url: str, filename: str = None) -> str:
     # Create output directory if it doesn't exist
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     
+    time_str = datetime.now(_IST).strftime("%Y-%m-%d_%H-%M-%S")
     # Extract filename from URL if not provided
     if not filename:
         parsed_url = urlparse(url)
-        filename = Path(parsed_url.path).name
-    
-    # Ensure .mp3 extension
-    if not filename.endswith('.mp3'):
-        filename += '.mp3'
+        raw_name = Path(parsed_url.path).name
+        if not raw_name.endswith('.mp3'):
+            raw_name += '.mp3'
+        filename = f"{time_str}_{raw_name}"
+    else:
+        if not filename.endswith('.mp3'):
+            filename += '.mp3'
     
     output_path = OUTPUT_DIR / filename
     

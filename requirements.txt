@@ -21,3 +21,4 @@ python-dotenv
 loguru
 
 google-genai
+pipecat-shunyalabsai
