@@ -332,8 +332,7 @@ class SemanticResponseCache:
                     "What is the policy on refunds?",
                 ],
                 "response": (
-                    "Nimbus offers a 30-day money-back guarantee for all new subscriptions on both monthly and annual plans. "
-                    "If you are not satisfied within your first thirty days, you can submit a ticket in your admin console for a full refund."
+                    "Nimbus offers a 30-day money-back guarantee on all subscriptions with full refunds via the admin console."
                 ),
             },
             {
@@ -353,8 +352,7 @@ class SemanticResponseCache:
                     "Tell me about your trial periods",
                 ],
                 "response": (
-                    "All Nimbus products include a 14-day free trial with full access to premium features and no credit card required. "
-                    "At the end of the trial, you can seamlessly upgrade to a paid plan without losing any setup data."
+                    "All Nimbus products include a 14-day free trial with no credit card required."
                 ),
             },
             {
@@ -376,8 +374,7 @@ class SemanticResponseCache:
                     "Is data hosted locally in Australia or EU?",
                 ],
                 "response": (
-                    "Customers can choose to host their data in our secure regional data centers located in the United States, "
-                    "European Union (Frankfurt), India, or Australia. You make this selection during account creation to comply with local data regulations."
+                    "You can host data in regional data centers across the US, European Union, India, or Australia."
                 ),
             },
             {
@@ -398,8 +395,7 @@ class SemanticResponseCache:
                     "Can we pay annually or monthly?",
                 ],
                 "response": (
-                    "Nimbus offers both monthly and annual billing cycles, with annual plans receiving a twenty percent discount. "
-                    "We accept all major credit cards, PayPal, and wire transfers for enterprise accounts exceeding 5,000 dollars."
+                    "We offer monthly and annual billing with a 20% annual discount, accepting major cards, PayPal, and wire transfers."
                 ),
             },
             {
@@ -419,8 +415,7 @@ class SemanticResponseCache:
                     "How long is data kept after cancellation?",
                 ],
                 "response": (
-                    "Administrators can cancel subscriptions or downgrade plans anytime directly in the billing portal without penalty. "
-                    "Your account remains active until the end of your billing cycle, and your data is retained for sixty days before permanent deletion."
+                    "Admins can cancel anytime in the billing portal without penalty, and data is retained for sixty days."
                 ),
             },
             {
@@ -439,8 +434,7 @@ class SemanticResponseCache:
                     "What is the availability guarantee?",
                 ],
                 "response": (
-                    "Nimbus guarantees a 99.9 percent monthly uptime for standard plans and 99.99 percent for enterprise tiers. "
-                    "If we fail to meet this SLA, affected customers receive service credits ranging from ten to fifty percent of their monthly fee."
+                    "Nimbus guarantees 99.9% uptime for standard plans and 99.99% for enterprise, with service credits for downtime."
                 ),
             },
             {
@@ -459,8 +453,7 @@ class SemanticResponseCache:
                     "Do you conduct penetration testing?",
                 ],
                 "response": (
-                    "Nimbus is SOC 2 Type 2 certified, ISO 27001 compliant, and adheres to GDPR and CCPA. "
-                    "Customer data is encrypted with TLS 1.3 in transit and AES-256 at rest, backed by regular third-party penetration testing."
+                    "Nimbus is SOC 2 Type 2 and ISO 27001 certified with TLS 1.3 in transit and AES-256 encryption at rest."
                 ),
             },
             {
@@ -480,8 +473,7 @@ class SemanticResponseCache:
                     "Do enterprise accounts get dedicated support?",
                 ],
                 "response": (
-                    "Standard plans include email and live chat support during regular business hours. "
-                    "Enterprise customers receive priority phone support and a dedicated technical account manager, with 24/7 access to our knowledge base and forums."
+                    "Standard plans include email and live chat support, while Enterprise includes priority phone support and a dedicated account manager."
                 ),
             },
             {
@@ -498,7 +490,7 @@ class SemanticResponseCache:
                     "What is the annual savings rate?",
                 ],
                 "response": (
-                    "Yes, choosing annual billing saves you twenty percent compared to monthly billing across all Nimbus products."
+                    "Yes, annual billing saves you twenty percent compared to monthly billing across all Nimbus products."
                 ),
             },
             {
@@ -515,8 +507,7 @@ class SemanticResponseCache:
                     "Tell me about Nimbus company headquarters",
                 ],
                 "response": (
-                    "Nimbus is headquartered in Austin, Texas, and was founded in 2014. "
-                    "We currently power over 50,000 businesses across 120 countries with our unified cloud software suite."
+                    "Nimbus is headquartered in Austin, Texas, founded in 2014, and powers over 50,000 businesses worldwide."
                 ),
             },
 
@@ -540,8 +531,7 @@ class SemanticResponseCache:
                     "Which software is cheapest?",
                 ],
                 "response": (
-                    "Our cheapest product is Nimbus Docs, starting at eight dollars per user per month on the Starter tier, "
-                    "or six dollars and forty cents billed annually."
+                    "Our cheapest product is Nimbus Docs, starting at eight dollars per user monthly, or six-forty billed annually."
                 ),
             },
             {
@@ -560,8 +550,7 @@ class SemanticResponseCache:
                     "What are your cheapest plans?",
                 ],
                 "response": (
-                    "Our three most affordable products on the Starter tier are Nimbus Docs at eight dollars, "
-                    "Nimbus People at ten dollars, and Nimbus Invoice at ten dollars per user per month."
+                    "Our three cheapest products are Nimbus Docs at eight dollars, and Nimbus People and Invoice at ten dollars per user monthly."
                 ),
             },
             {
@@ -578,8 +567,7 @@ class SemanticResponseCache:
                     "What is the most expensive software you sell?",
                 ],
                 "response": (
-                    "Our most expensive products on the Starter tier are Nimbus Leads and Nimbus DataPipe at twenty-five dollars per user per month, "
-                    "and sixty-five dollars on the Professional tier."
+                    "Our most expensive products are Nimbus Leads and DataPipe at twenty-five dollars monthly on Starter, and sixty-five on Professional."
                 ),
             },
             {
@@ -596,8 +584,7 @@ class SemanticResponseCache:
                     "Which products have the highest monthly fees?",
                 ],
                 "response": (
-                    "Our highest priced products on the Starter tier are Nimbus Leads, Nimbus DataPipe, Nimbus Sites, and Nimbus Recruit, "
-                    "starting at twenty-five dollars per user per month, and up to sixty-five dollars on Professional."
+                    "Our highest-priced products are Nimbus Leads, DataPipe, Sites, and Recruit, starting at twenty-five dollars up to sixty-five on Professional."
                 ),
             },
             {
@@ -616,8 +603,7 @@ class SemanticResponseCache:
                     "Tell me about your free tier options",
                 ],
                 "response": (
-                    "Every single Nimbus product includes a forever free tier at zero dollars per month for basic features, "
-                    "plus a 14-day free trial on paid plans with no credit card required."
+                    "Every Nimbus product includes a forever free tier, plus a 14-day free trial on paid plans."
                 ),
             },
             {
@@ -635,8 +621,7 @@ class SemanticResponseCache:
                     "What kind of applications are in the Nimbus suite?",
                 ],
                 "response": (
-                    "Nimbus offers twenty-four integrated cloud applications across Sales, Operations, Finance, HR, and IT, "
-                    "including Nimbus CRM, Books, Payroll, Desk, Docs, People, and Leads."
+                    "Nimbus offers twenty-four cloud applications across Sales, Finance, HR, Support, and IT, including CRM, Books, and Payroll."
                 ),
             },
 
@@ -657,7 +642,7 @@ class SemanticResponseCache:
                     "Give me an overview of Nimbus CRM",
                 ],
                 "response": (
-                    "Nimbus CRM is our sales and contact management hub. It centralizes your customer data, tracks deals across multiple visual pipelines, and automates daily sales tasks to help your team close deals faster."
+                    "Nimbus CRM centralizes customer data, tracks sales pipelines, and automates daily tasks to close deals faster."
                 ),
             },
             {
@@ -673,7 +658,7 @@ class SemanticResponseCache:
                     "How does Nimbus Leads work?",
                 ],
                 "response": (
-                    "Nimbus Leads automates outbound sales with multi-channel outreach sequences, a built-in power dialer, and predictive lead scoring to connect reps with high-value prospects."
+                    "Nimbus Leads automates outbound sales with multi-channel outreach sequences, a built-in power dialer, and lead scoring."
                 ),
             },
             {
@@ -688,7 +673,7 @@ class SemanticResponseCache:
                     "What does Nimbus Quote do?",
                 ],
                 "response": (
-                    "Nimbus Quote is a CPQ and proposal solution that accelerates sales cycles with automated quote generation, interactive deal rooms, and secure e-signatures."
+                    "Nimbus Quote accelerates proposal workflows with automated quote generation, interactive deal rooms, and e-signatures."
                 ),
             },
             {
@@ -703,7 +688,7 @@ class SemanticResponseCache:
                     "What does Nimbus Campaigns do?",
                 ],
                 "response": (
-                    "Nimbus Campaigns is an email marketing automation platform to design responsive email campaigns, segment audiences based on behavior, and build multi-step customer journeys."
+                    "Nimbus Campaigns is an email marketing platform for automated campaigns, audience segmentation, and customer journeys."
                 ),
             },
             {
@@ -718,7 +703,7 @@ class SemanticResponseCache:
                     "What does Nimbus Social do?",
                 ],
                 "response": (
-                    "Nimbus Social is a unified social media management tool to draft, schedule, and publish posts across platforms while monitoring brand mentions and engagement analytics."
+                    "Nimbus Social lets you schedule posts across platforms and track engagement analytics."
                 ),
             },
             {
@@ -733,7 +718,7 @@ class SemanticResponseCache:
                     "What does Nimbus Sites do?",
                 ],
                 "response": (
-                    "Nimbus Sites is a visual landing page and website builder with mobile-optimized templates, integrated lead capture forms, and native A/B testing."
+                    "Nimbus Sites is a visual landing page builder with mobile templates, lead capture forms, and A/B testing."
                 ),
             },
             {
@@ -748,7 +733,7 @@ class SemanticResponseCache:
                     "What does Nimbus Books do?",
                 ],
                 "response": (
-                    "Nimbus Books simplifies business finances with automated double-entry accounting, bank reconciliation, tax-ready financial statements, and multi-currency support."
+                    "Nimbus Books handles business accounting with bank reconciliation, financial statements, and multi-currency support."
                 ),
             },
             {
@@ -763,7 +748,7 @@ class SemanticResponseCache:
                     "What does Nimbus Invoice do?",
                 ],
                 "response": (
-                    "Nimbus Invoice generates professional invoices, automates recurring billing, and accepts fast online payments with automated payment reminders."
+                    "Nimbus Invoice generates professional invoices, automates recurring billing, and accepts online payments."
                 ),
             },
             {
@@ -778,7 +763,7 @@ class SemanticResponseCache:
                     "What does Nimbus Expense do?",
                 ],
                 "response": (
-                    "Nimbus Expense streamlines corporate spend management with smart receipt scanning, multi-level approval workflows, and automated employee reimbursements."
+                    "Nimbus Expense simplifies spend management with smart receipt scanning, approval workflows, and employee reimbursements."
                 ),
             },
             {
@@ -793,7 +778,7 @@ class SemanticResponseCache:
                     "What does Nimbus People do?",
                 ],
                 "response": (
-                    "Nimbus People is a centralized HRIS managing the entire employee lifecycle with digital onboarding, time-off tracking, document storage, and interactive company org charts."
+                    "Nimbus People is a centralized HRIS for employee onboarding, time-off tracking, and interactive org charts."
                 ),
             },
             {
@@ -808,7 +793,7 @@ class SemanticResponseCache:
                     "What does Nimbus Recruit do?",
                 ],
                 "response": (
-                    "Nimbus Recruit is an applicant tracking system that streamlines hiring with customizable candidate pipelines, job board syndication, resume parsing, and interview scheduling."
+                    "Nimbus Recruit streamlines hiring with candidate pipelines, job board posting, resume parsing, and interview scheduling."
                 ),
             },
             {
@@ -823,7 +808,7 @@ class SemanticResponseCache:
                     "What does Nimbus Payroll do?",
                 ],
                 "response": (
-                    "Nimbus Payroll automates direct deposit payroll runs, payroll tax filings, and contractor payments with complete legal compliance."
+                    "Nimbus Payroll automates direct deposit payroll runs, payroll tax filings, and contractor payments with complete compliance."
                 ),
             },
             {
@@ -838,7 +823,7 @@ class SemanticResponseCache:
                     "What does Nimbus Desk do?",
                 ],
                 "response": (
-                    "Nimbus Desk is an omnichannel customer support helpdesk with shared ticketing inboxes, SLA tracking, intelligent routing, and escalation rules."
+                    "Nimbus Desk is a customer support helpdesk with shared ticketing inboxes, SLA tracking, and intelligent routing."
                 ),
             },
             {
@@ -853,7 +838,7 @@ class SemanticResponseCache:
                     "What does Nimbus Chat do?",
                 ],
                 "response": (
-                    "Nimbus Chat provides live website chat and conversational AI bots to engage visitors, qualify inbound leads, and answer customer queries around the clock."
+                    "Nimbus Chat provides live website chat and conversational AI bots to engage visitors and resolve queries 24/7."
                 ),
             },
             {
@@ -868,7 +853,7 @@ class SemanticResponseCache:
                     "What does Nimbus Knowledge do?",
                 ],
                 "response": (
-                    "Nimbus Knowledge enables companies to create, organize, and publish searchable self-service help centers, customer knowledge bases, and product documentation."
+                    "Nimbus Knowledge lets you build searchable self-service help centers, customer knowledge bases, and product documentation."
                 ),
             },
             {
@@ -883,7 +868,7 @@ class SemanticResponseCache:
                     "What does Nimbus Projects do?",
                 ],
                 "response": (
-                    "Nimbus Projects is a comprehensive project management solution featuring task tracking, interactive Gantt charts, sprint planning, and team workload allocation."
+                    "Nimbus Projects features task tracking, Gantt charts, sprint planning, and team workload allocation."
                 ),
             },
             {
@@ -901,7 +886,7 @@ class SemanticResponseCache:
                     "Tell me about docs",
                 ],
                 "response": (
-                    "Nimbus Docs is a modern collaborative workspace for team documentation, meeting notes, and company wikis with real-time multiplayer editing and rich media embedding."
+                    "Nimbus Docs is a modern collaborative workspace for team documentation and company wikis with real-time editing."
                 ),
             },
             {
@@ -916,7 +901,7 @@ class SemanticResponseCache:
                     "What does Nimbus Boards do?",
                 ],
                 "response": (
-                    "Nimbus Boards offers agile visual workspaces combining structured Kanban sprint boards with freeform digital whiteboards for brainstorming and mapping workflows."
+                    "Nimbus Boards combines agile Kanban sprint boards with digital whiteboards for brainstorming and workflows."
                 ),
             },
             {
@@ -931,7 +916,7 @@ class SemanticResponseCache:
                     "What does Nimbus Analytics do?",
                 ],
                 "response": (
-                    "Nimbus Analytics is a self-serve business intelligence tool to build interactive visual reports, model complex metrics, and uncover actionable business insights without code."
+                    "Nimbus Analytics is a self-serve BI tool to build visual reports and uncover actionable insights without code."
                 ),
             },
             {
@@ -946,7 +931,7 @@ class SemanticResponseCache:
                     "What does Nimbus Dashboards do?",
                 ],
                 "response": (
-                    "Nimbus Dashboards displays real-time operational metrics, team KPIs, and live status monitors with customizable widgets and instant threshold alerts."
+                    "Nimbus Dashboards displays real-time operational metrics, team KPIs, and live status monitors with alerts."
                 ),
             },
             {
@@ -961,7 +946,7 @@ class SemanticResponseCache:
                     "What does Nimbus DataPipe do?",
                 ],
                 "response": (
-                    "Nimbus DataPipe is a no-code ETL platform that connects cloud applications with data warehouses to extract, transform, and sync business data automatically."
+                    "Nimbus DataPipe is a no-code ETL platform connecting cloud apps and data warehouses to sync business data."
                 ),
             },
             {
@@ -976,7 +961,7 @@ class SemanticResponseCache:
                     "What does Nimbus Vault do?",
                 ],
                 "response": (
-                    "Nimbus Vault securely manages company passwords, API keys, and environment secrets with zero-knowledge AES-256 encryption and granular role-based access."
+                    "Nimbus Vault securely manages passwords, API keys, and secrets with AES-256 encryption and role-based access."
                 ),
             },
             {
@@ -991,7 +976,7 @@ class SemanticResponseCache:
                     "What does Nimbus SSO do?",
                 ],
                 "response": (
-                    "Nimbus SSO provides enterprise single sign-on, identity governance, multi-factor authentication, and automated SCIM provisioning across all your company applications."
+                    "Nimbus SSO provides enterprise single sign-on, multi-factor authentication, and automated identity provisioning."
                 ),
             },
             {
@@ -1006,7 +991,7 @@ class SemanticResponseCache:
                     "What does Nimbus Endpoint do?",
                 ],
                 "response": (
-                    "Nimbus Endpoint secures and monitors all corporate laptops, desktops, and mobile devices with next-generation antivirus, remote wipe, USB device controls, and compliance reporting."
+                    "Nimbus Endpoint secures company laptops and mobile devices with antivirus, remote wipe, and compliance reporting."
                 ),
             },
 
@@ -1027,7 +1012,7 @@ class SemanticResponseCache:
                     "Tell me about CRM pricing",
                 ],
                 "response": (
-                    "Nimbus CRM starts at fifteen dollars per user per month on the Starter tier, or twelve dollars billed annually. Professional is forty-five dollars per user per month, and a forever free tier is also included."
+                    "Nimbus CRM starts at fifteen dollars per user monthly, twelve annually, and forty-five on Professional, plus a free tier."
                 ),
             },
             {
@@ -1043,7 +1028,7 @@ class SemanticResponseCache:
                     "What does Leads cost?",
                 ],
                 "response": (
-                    "Nimbus Leads starts at twenty-five dollars per user per month for Starter, or twenty dollars billed annually. Professional is sixty-five dollars per user per month with power dialer and lead scoring."
+                    "Nimbus Leads starts at twenty-five dollars per user monthly, twenty annually, and sixty-five on Professional."
                 ),
             },
             {
@@ -1058,7 +1043,7 @@ class SemanticResponseCache:
                     "Nimbus Quote pricing",
                 ],
                 "response": (
-                    "Nimbus Quote starts at twenty dollars per user per month for Starter, or sixteen dollars billed annually. Professional is fifty dollars per user per month with CPQ and electronic signatures."
+                    "Nimbus Quote starts at twenty dollars per user monthly, sixteen annually, and fifty on Professional."
                 ),
             },
             {
@@ -1073,7 +1058,7 @@ class SemanticResponseCache:
                     "Nimbus Campaigns pricing",
                 ],
                 "response": (
-                    "Nimbus Campaigns starts at fifteen dollars per user per month for Starter, or twelve dollars billed annually. Professional is forty-five dollars per user per month with email marketing automation."
+                    "Nimbus Campaigns starts at fifteen dollars per user monthly, twelve annually, and forty-five on Professional."
                 ),
             },
             {
@@ -1088,7 +1073,7 @@ class SemanticResponseCache:
                     "Nimbus Social pricing",
                 ],
                 "response": (
-                    "Nimbus Social starts at twenty dollars per user per month for Starter, or sixteen dollars billed annually. Professional is fifty dollars per user per month with cross-platform scheduling and analytics."
+                    "Nimbus Social starts at twenty dollars per user monthly, sixteen annually, and fifty on Professional."
                 ),
             },
             {
@@ -1103,7 +1088,7 @@ class SemanticResponseCache:
                     "Nimbus Sites pricing",
                 ],
                 "response": (
-                    "Nimbus Sites starts at twenty-five dollars per user per month for Starter, or twenty dollars billed annually. Professional is sixty dollars per user per month with custom domains and A/B testing."
+                    "Nimbus Sites starts at twenty-five dollars per user monthly, twenty annually, and sixty on Professional."
                 ),
             },
             {
@@ -1119,7 +1104,7 @@ class SemanticResponseCache:
                     "What are the Books plans?",
                 ],
                 "response": (
-                    "Nimbus Books starts at fifteen dollars per user per month for Starter, or twelve dollars billed annually. Professional is forty dollars per month with multi-currency and double-entry accounting."
+                    "Nimbus Books starts at fifteen dollars per user monthly, twelve annually, and forty on Professional."
                 ),
             },
             {
@@ -1135,7 +1120,7 @@ class SemanticResponseCache:
                     "What are the Invoice plans?",
                 ],
                 "response": (
-                    "Nimbus Invoice starts at ten dollars per user per month for Starter, or eight dollars billed annually. Professional is thirty dollars per user per month with automated recurring billing."
+                    "Nimbus Invoice starts at ten dollars per user monthly, eight annually, and thirty on Professional."
                 ),
             },
             {
@@ -1150,7 +1135,7 @@ class SemanticResponseCache:
                     "Nimbus Expense pricing",
                 ],
                 "response": (
-                    "Nimbus Expense starts at fifteen dollars per user per month for Starter, or twelve dollars billed annually. Professional is thirty-five dollars per user per month with smart receipt scanning and corporate cards."
+                    "Nimbus Expense starts at fifteen dollars per user monthly, twelve annually, and thirty-five on Professional."
                 ),
             },
             {
@@ -1166,7 +1151,7 @@ class SemanticResponseCache:
                     "Tell me about Nimbus People HR tool",
                 ],
                 "response": (
-                    "Nimbus People starts at ten dollars per user per month for Starter, or eight dollars billed annually. Professional is thirty dollars per user per month with performance reviews and time tracking."
+                    "Nimbus People starts at ten dollars per user monthly, eight annually, and thirty on Professional."
                 ),
             },
             {
@@ -1181,7 +1166,7 @@ class SemanticResponseCache:
                     "Nimbus Recruit pricing",
                 ],
                 "response": (
-                    "Nimbus Recruit starts at twenty-five dollars per user per month for Starter, or twenty dollars billed annually. Professional is sixty dollars per user per month with applicant tracking and job board syndication."
+                    "Nimbus Recruit starts at twenty-five dollars per user monthly, twenty annually, and sixty on Professional."
                 ),
             },
             {
@@ -1198,7 +1183,7 @@ class SemanticResponseCache:
                     "How much is payroll?",
                 ],
                 "response": (
-                    "Nimbus Payroll starts at twenty dollars per user per month for Starter, or sixteen dollars billed annually. Professional is fifty dollars per month with direct deposit and automated tax filing."
+                    "Nimbus Payroll starts at twenty dollars per user monthly, sixteen annually, and fifty on Professional."
                 ),
             },
             {
@@ -1214,7 +1199,7 @@ class SemanticResponseCache:
                     "Tell me about Nimbus Desk plans",
                 ],
                 "response": (
-                    "Nimbus Desk starts at twenty dollars per user per month for Starter, or sixteen dollars billed annually. Professional is fifty dollars per user per month with multi-channel ticketing and SLA management."
+                    "Nimbus Desk starts at twenty dollars per user monthly, sixteen annually, and fifty on Professional."
                 ),
             },
             {
@@ -1229,7 +1214,7 @@ class SemanticResponseCache:
                     "Nimbus Chat pricing",
                 ],
                 "response": (
-                    "Nimbus Chat starts at fifteen dollars per user per month for Starter, or twelve dollars billed annually. Professional is forty-five dollars per month with proactive chat triggers and AI bots."
+                    "Nimbus Chat starts at fifteen dollars per user monthly, twelve annually, and forty-five on Professional."
                 ),
             },
             {
@@ -1244,7 +1229,7 @@ class SemanticResponseCache:
                     "Nimbus Knowledge pricing",
                 ],
                 "response": (
-                    "Nimbus Knowledge starts at fifteen dollars per user per month for Starter, or twelve dollars billed annually. Professional is thirty-five dollars per month with custom branding and multilingual articles."
+                    "Nimbus Knowledge starts at fifteen dollars per user monthly, twelve annually, and thirty-five on Professional."
                 ),
             },
             {
@@ -1260,7 +1245,7 @@ class SemanticResponseCache:
                     "What are the Projects plans?",
                 ],
                 "response": (
-                    "Nimbus Projects starts at ten dollars per user per month for Starter, or eight dollars billed annually. Professional is thirty dollars per user per month with Gantt charts and workload management."
+                    "Nimbus Projects starts at ten dollars per user monthly, eight annually, and thirty on Professional."
                 ),
             },
             {
@@ -1277,7 +1262,7 @@ class SemanticResponseCache:
                     "Tell me about Nimbus Docs cost",
                 ],
                 "response": (
-                    "Nimbus Docs starts at eight dollars per user per month for Starter, or six dollars and forty cents billed annually. Professional is fifteen dollars per user per month, and a forever free tier is also included."
+                    "Nimbus Docs starts at eight dollars per user monthly, six-forty annually, and fifteen on Professional, plus a free tier."
                 ),
             },
             {
@@ -1292,7 +1277,7 @@ class SemanticResponseCache:
                     "Nimbus Boards pricing",
                 ],
                 "response": (
-                    "Nimbus Boards starts at twelve dollars per user per month for Starter, or nine dollars and sixty cents billed annually. Professional is twenty-five dollars per month with unlimited boards and custom workflows."
+                    "Nimbus Boards starts at twelve dollars per user monthly, nine-sixty annually, and twenty-five on Professional."
                 ),
             },
             {
@@ -1307,7 +1292,7 @@ class SemanticResponseCache:
                     "Nimbus Analytics pricing",
                 ],
                 "response": (
-                    "Nimbus Analytics starts at fifteen dollars per user per month for Starter, or twelve dollars billed annually. Professional is forty-five dollars per user per month with advanced data modeling and visual dashboards."
+                    "Nimbus Analytics starts at fifteen dollars per user monthly, twelve annually, and forty-five on Professional."
                 ),
             },
             {
@@ -1322,7 +1307,7 @@ class SemanticResponseCache:
                     "Nimbus Dashboards pricing",
                 ],
                 "response": (
-                    "Nimbus Dashboards starts at ten dollars per user per month for Starter, or eight dollars billed annually. Professional is thirty dollars per user per month with live TV displays and scheduled email snapshots."
+                    "Nimbus Dashboards starts at ten dollars per user monthly, eight annually, and thirty on Professional."
                 ),
             },
             {
@@ -1337,7 +1322,7 @@ class SemanticResponseCache:
                     "Nimbus DataPipe pricing",
                 ],
                 "response": (
-                    "Nimbus DataPipe starts at twenty-five dollars per user per month for Starter, or twenty dollars billed annually. Professional is sixty-five dollars per user per month with real-time sync and custom connectors."
+                    "Nimbus DataPipe starts at twenty-five dollars per user monthly, twenty annually, and sixty-five on Professional."
                 ),
             },
             {
@@ -1352,7 +1337,7 @@ class SemanticResponseCache:
                     "Nimbus Vault pricing",
                 ],
                 "response": (
-                    "Nimbus Vault starts at ten dollars per user per month for Starter, or eight dollars billed annually. Professional is twenty-five dollars per month with secret rotation and automated audit logging."
+                    "Nimbus Vault starts at ten dollars per user monthly, eight annually, and twenty-five on Professional."
                 ),
             },
             {
@@ -1367,7 +1352,7 @@ class SemanticResponseCache:
                     "Nimbus SSO pricing",
                 ],
                 "response": (
-                    "Nimbus SSO starts at fifteen dollars per user per month for Starter, or twelve dollars billed annually. Professional is thirty-five dollars per month with SAML 2.0 and automated user provisioning."
+                    "Nimbus SSO starts at fifteen dollars per user monthly, twelve annually, and thirty-five on Professional."
                 ),
             },
             {
@@ -1382,7 +1367,7 @@ class SemanticResponseCache:
                     "Nimbus Endpoint pricing",
                 ],
                 "response": (
-                    "Nimbus Endpoint starts at twenty dollars per user per month for Starter, or sixteen dollars billed annually. Professional is forty-five dollars per user per month with remote device management and patch deployment."
+                    "Nimbus Endpoint starts at twenty dollars per user monthly, sixteen annually, and forty-five on Professional."
                 ),
             },
         ]

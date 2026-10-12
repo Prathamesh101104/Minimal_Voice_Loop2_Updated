@@ -226,6 +226,12 @@ class SemanticRAGProcessor(FrameProcessor):
                     break
 
             if user_text:
+                # Prune stale RAG knowledge blocks from older user messages to minimize token usage
+                for past_m in msgs:
+                    if past_m is not user_msg and past_m.get("role") == "user" and past_m.get("content"):
+                        if "\n\n[Retrieved Website Knowledge]:" in past_m["content"]:
+                            past_m["content"] = past_m["content"].split("\n\n[Retrieved Website Knowledge]:")[0].strip()
+
                 # Extract clean user query
                 clean_query = user_text.split("\n\n[Retrieved Website Knowledge]:")[0].strip()
 
@@ -749,10 +755,10 @@ async def run_bot(transport: BaseTransport, handle_sigint: bool, call_id: str = 
     context = LLMContext(messages, tools=[end_call_schema])
     vad_analyzer = SileroVADAnalyzer(
         params=VADParams(
-            confidence=0.35,      # Catches soft, quiet, and low-volume speaking
-            start_secs=0.20,      # Faster onset detection for natural barge-in
-            stop_secs=0.20,       # Prevents cutting caller off mid-sentence during brief pauses
-            min_volume=0.03,     # Low threshold accommodates wide dynamic range from whisper to loud
+            confidence=0.55,      # Solid speech confidence threshold; filters out line echo and ambient noise
+            start_secs=0.30,      # 300ms onset avoids false barge-in from clicks, short breaths, and phone handling
+            stop_secs=0.20,       # Turn analyzer default to maintain optimal turn detection latency
+            min_volume=0.06,     # Filters out quiet background noise and speakerphone leakage
         )
     )
     context_aggregator = LLMContextAggregatorPair(

@@ -94,6 +94,10 @@ class CallTelemetryCollector(FrameProcessor):
     async def process_frame(self, frame: Frame, direction: FrameDirection):
         await super().process_frame(frame, direction)
 
+        # Only process downstream frames to avoid double-counting metrics on upstream propagation
+        if direction != FrameDirection.DOWNSTREAM:
+            return
+
         # 1. User started speaking -> transition to a new turn
         if isinstance(frame, (UserStartedSpeakingFrame, VADUserStartedSpeakingFrame)):
             if self._current_turn and (self._current_turn.get("agent_text") or self._current_turn.get("ttfa_ms", 0) > 0):

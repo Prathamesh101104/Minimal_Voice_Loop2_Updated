@@ -1,12 +1,12 @@
 {
   "version": "1.0",
-  "updated_at": 1790846299.841242,
-  "total_entries": 64,
+  "updated_at": 1791800536.723082,
+  "total_entries": 65,
   "entries": [
     {
       "id": "policy_refund",
       "canonical_query": "What is your refund policy?",
-      "response": "Nimbus offers a 30-day money-back guarantee for all new subscriptions on both monthly and annual plans. If you are not satisfied within your first thirty days, you can submit a ticket in your admin console for a full refund.",
+      "response": "Nimbus offers a 30-day money-back guarantee on all subscriptions with full refunds via the admin console.",
       "category": "policy",
       "examples": [
         "What is your refund policy?",
@@ -4272,13 +4272,13 @@
         "refund"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.719569,
-      "last_hit_at": 1790846299.7195694
+      "created_at": 1791800536.626721,
+      "last_hit_at": 1791800536.6267214
     },
     {
       "id": "policy_free_trial",
       "canonical_query": "Do you offer a free trial?",
-      "response": "All Nimbus products include a 14-day free trial with full access to premium features and no credit card required. At the end of the trial, you can seamlessly upgrade to a paid plan without losing any setup data.",
+      "response": "All Nimbus products include a 14-day free trial with no credit card required.",
       "category": "policy",
       "examples": [
         "Do you offer a free trial?",
@@ -8158,13 +8158,13 @@
         "try"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.721206,
-      "last_hit_at": 1790846299.7212062
+      "created_at": 1791800536.627573,
+      "last_hit_at": 1791800536.6275735
     },
     {
       "id": "policy_data_residency",
       "canonical_query": "What is your data residency policy?",
-      "response": "Customers can choose to host their data in our secure regional data centers located in the United States, European Union (Frankfurt), India, or Australia. You make this selection during account creation to comply with local data regulations.",
+      "response": "You can host data in regional data centers across the US, European Union, India, or Australia.",
       "category": "policy",
       "examples": [
         "What is your data residency policy?",
@@ -12817,13 +12817,13 @@
         "residency"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.7251892,
-      "last_hit_at": 1790846299.7251897
+      "created_at": 1791800536.631823,
+      "last_hit_at": 1791800536.6318235
     },
     {
       "id": "policy_billing",
       "canonical_query": "What is your billing and payment policy?",
-      "response": "Nimbus offers both monthly and annual billing cycles, with annual plans receiving a twenty percent discount. We accept all major credit cards, PayPal, and wire transfers for enterprise accounts exceeding 5,000 dollars.",
+      "response": "We offer monthly and annual billing with a 20% annual discount, accepting major cards, PayPal, and wire transfers.",
       "category": "policy",
       "examples": [
         "What is your billing policy?",
@@ -17089,13 +17089,13 @@
         "billing"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.72782,
-      "last_hit_at": 1790846299.7278206
+      "created_at": 1791800536.6331103,
+      "last_hit_at": 1791800536.6331105
     },
     {
       "id": "policy_cancellation",
       "canonical_query": "What is your cancellation policy?",
-      "response": "Administrators can cancel subscriptions or downgrade plans anytime directly in the billing portal without penalty. Your account remains active until the end of your billing cycle, and your data is retained for sixty days before permanent deletion.",
+      "response": "Admins can cancel anytime in the billing portal without penalty, and data is retained for sixty days.",
       "category": "policy",
       "examples": [
         "What is your cancellation policy?",
@@ -20974,13 +20974,13 @@
         "cancel"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.7298157,
-      "last_hit_at": 1790846299.729816
+      "created_at": 1791800536.6341546,
+      "last_hit_at": 1791800536.6341548
     },
     {
       "id": "policy_sla",
       "canonical_query": "What is your SLA and uptime policy?",
-      "response": "Nimbus guarantees a 99.9 percent monthly uptime for standard plans and 99.99 percent for enterprise tiers. If we fail to meet this SLA, affected customers receive service credits ranging from ten to fifty percent of their monthly fee.",
+      "response": "Nimbus guarantees 99.9% uptime for standard plans and 99.99% for enterprise, with service credits for downtime.",
       "category": "policy",
       "examples": [
         "What is your SLA policy?",
@@ -24472,13 +24472,13 @@
         "sla"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.731874,
-      "last_hit_at": 1790846299.7318742
+      "created_at": 1791800536.6364584,
+      "last_hit_at": 1791800536.6364586
     },
     {
       "id": "policy_security",
       "canonical_query": "What is your security and compliance policy?",
-      "response": "Nimbus is SOC 2 Type 2 certified, ISO 27001 compliant, and adheres to GDPR and CCPA. Customer data is encrypted with TLS 1.3 in transit and AES-256 at rest, backed by regular third-party penetration testing.",
+      "response": "Nimbus is SOC 2 Type 2 and ISO 27001 certified with TLS 1.3 in transit and AES-256 encryption at rest.",
       "category": "policy",
       "examples": [
         "What is your security policy?",
@@ -27970,13 +27970,13 @@
         "security"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.7346683,
-      "last_hit_at": 1790846299.7346685
+      "created_at": 1791800536.6382897,
+      "last_hit_at": 1791800536.63829
     },
     {
       "id": "policy_support",
       "canonical_query": "What is your customer support policy?",
-      "response": "Standard plans include email and live chat support during regular business hours. Enterprise customers receive priority phone support and a dedicated technical account manager, with 24/7 access to our knowledge base and forums.",
+      "response": "Standard plans include email and live chat support, while Enterprise includes priority phone support and a dedicated account manager.",
       "category": "policy",
       "examples": [
         "What is your support policy?",
@@ -31855,13 +31855,13 @@
         "support"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.7365513,
-      "last_hit_at": 1790846299.7365515
+      "created_at": 1791800536.6392965,
+      "last_hit_at": 1791800536.6392968
     },
     {
       "id": "policy_annual_discount",
       "canonical_query": "Do you offer an annual discount?",
-      "response": "Yes, choosing annual billing saves you twenty percent compared to monthly billing across all Nimbus products.",
+      "response": "Yes, annual billing saves you twenty percent compared to monthly billing across all Nimbus products.",
       "category": "policy",
       "examples": [
         "Do you offer an annual discount?",
@@ -34579,13 +34579,13 @@
         "annual"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.7382586,
-      "last_hit_at": 1790846299.7382588
+      "created_at": 1791800536.6405919,
+      "last_hit_at": 1791800536.640592
     },
     {
       "id": "company_overview",
       "canonical_query": "Where is Nimbus located and headquartered?",
-      "response": "Nimbus is headquartered in Austin, Texas, and was founded in 2014. We currently power over 50,000 businesses across 120 countries with our unified cloud software suite.",
+      "response": "Nimbus is headquartered in Austin, Texas, founded in 2014, and powers over 50,000 businesses worldwide.",
       "category": "company",
       "examples": [
         "Where is Nimbus located?",
@@ -37304,13 +37304,13 @@
         "location"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.7394211,
-      "last_hit_at": 1790846299.7394214
+      "created_at": 1791800536.6414547,
+      "last_hit_at": 1791800536.6414547
     },
     {
       "id": "comp_cheapest_single",
       "canonical_query": "What is your cheapest product?",
-      "response": "Our cheapest product is Nimbus Docs, starting at eight dollars per user per month on the Starter tier, or six dollars and forty cents billed annually.",
+      "response": "Our cheapest product is Nimbus Docs, starting at eight dollars per user monthly, or six-forty billed annually.",
       "category": "comparison",
       "examples": [
         "What is your cheapest product?",
@@ -41189,13 +41189,13 @@
         "cheapest"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.7436295,
-      "last_hit_at": 1790846299.74363
+      "created_at": 1791800536.644602,
+      "last_hit_at": 1791800536.6446025
     },
     {
       "id": "comp_cheapest_plural",
       "canonical_query": "What are your cheapest products?",
-      "response": "Our three most affordable products on the Starter tier are Nimbus Docs at eight dollars, Nimbus People at ten dollars, and Nimbus Invoice at ten dollars per user per month.",
+      "response": "Our three cheapest products are Nimbus Docs at eight dollars, and Nimbus People and Invoice at ten dollars per user monthly.",
       "category": "comparison",
       "examples": [
         "What are your cheapest products?",
@@ -44687,13 +44687,13 @@
         "cheapest"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.746323,
-      "last_hit_at": 1790846299.7463233
+      "created_at": 1791800536.646435,
+      "last_hit_at": 1791800536.6464353
     },
     {
       "id": "comp_expensive_single",
       "canonical_query": "What is your most expensive product?",
-      "response": "Our most expensive products on the Starter tier are Nimbus Leads and Nimbus DataPipe at twenty-five dollars per user per month, and sixty-five dollars on the Professional tier.",
+      "response": "Our most expensive products are Nimbus Leads and DataPipe at twenty-five dollars monthly on Starter, and sixty-five on Professional.",
       "category": "comparison",
       "examples": [
         "What is your most expensive product?",
@@ -47411,13 +47411,13 @@
         "expensive"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.7484055,
-      "last_hit_at": 1790846299.748406
+      "created_at": 1791800536.6474333,
+      "last_hit_at": 1791800536.6474333
     },
     {
       "id": "comp_expensive_plural",
       "canonical_query": "What are your most expensive products?",
-      "response": "Our highest priced products on the Starter tier are Nimbus Leads, Nimbus DataPipe, Nimbus Sites, and Nimbus Recruit, starting at twenty-five dollars per user per month, and up to sixty-five dollars on Professional.",
+      "response": "Our highest-priced products are Nimbus Leads, DataPipe, Sites, and Recruit, starting at twenty-five dollars up to sixty-five on Professional.",
       "category": "comparison",
       "examples": [
         "What are your most expensive products?",
@@ -50135,13 +50135,13 @@
         "expensive"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.750424,
-      "last_hit_at": 1790846299.7504244
+      "created_at": 1791800536.6490357,
+      "last_hit_at": 1791800536.6490362
     },
     {
       "id": "comp_free_tier",
       "canonical_query": "Do you offer free products or a free tier?",
-      "response": "Every single Nimbus product includes a forever free tier at zero dollars per month for basic features, plus a 14-day free trial on paid plans with no credit card required.",
+      "response": "Every Nimbus product includes a forever free tier, plus a 14-day free trial on paid plans.",
       "category": "comparison",
       "examples": [
         "Do you have a free product?",
@@ -53633,13 +53633,13 @@
         "freetier"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.752652,
-      "last_hit_at": 1790846299.7526524
+      "created_at": 1791800536.6518612,
+      "last_hit_at": 1791800536.6518614
     },
     {
       "id": "comp_catalog_overview",
       "canonical_query": "What products does Nimbus offer?",
-      "response": "Nimbus offers twenty-four integrated cloud applications across Sales, Operations, Finance, HR, and IT, including Nimbus CRM, Books, Payroll, Desk, Docs, People, and Leads.",
+      "response": "Nimbus offers twenty-four cloud applications across Sales, Finance, HR, Support, and IT, including CRM, Books, and Payroll.",
       "category": "comparison",
       "examples": [
         "What products do you offer?",
@@ -56744,13 +56744,13 @@
         "catalog"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.7544937,
-      "last_hit_at": 1790846299.7544942
+      "created_at": 1791800536.6529827,
+      "last_hit_at": 1791800536.652983
     },
     {
       "id": "info_crm",
       "canonical_query": "What is Nimbus CRM?",
-      "response": "Nimbus CRM is our sales and contact management hub. It centralizes your customer data, tracks deals across multiple visual pipelines, and automates daily sales tasks to help your team close deals faster.",
+      "response": "Nimbus CRM centralizes customer data, tracks sales pipelines, and automates daily tasks to close deals faster.",
       "category": "product",
       "examples": [
         "What is Nimbus CRM?",
@@ -59468,13 +59468,13 @@
         "crm"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.755593,
-      "last_hit_at": 1790846299.7555933
+      "created_at": 1791800536.6536217,
+      "last_hit_at": 1791800536.653622
     },
     {
       "id": "info_leads",
       "canonical_query": "What is Nimbus Leads?",
-      "response": "Nimbus Leads automates outbound sales with multi-channel outreach sequences, a built-in power dialer, and predictive lead scoring to connect reps with high-value prospects.",
+      "response": "Nimbus Leads automates outbound sales with multi-channel outreach sequences, a built-in power dialer, and lead scoring.",
       "category": "product",
       "examples": [
         "What is Nimbus Leads?",
@@ -61805,13 +61805,13 @@
         "leads"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.7564182,
-      "last_hit_at": 1790846299.7564185
+      "created_at": 1791800536.6541266,
+      "last_hit_at": 1791800536.654127
     },
     {
       "id": "info_quote",
       "canonical_query": "What is Nimbus Quote?",
-      "response": "Nimbus Quote is a CPQ and proposal solution that accelerates sales cycles with automated quote generation, interactive deal rooms, and secure e-signatures.",
+      "response": "Nimbus Quote accelerates proposal workflows with automated quote generation, interactive deal rooms, and e-signatures.",
       "category": "product",
       "examples": [
         "What is Nimbus Quote?",
@@ -63755,13 +63755,13 @@
         "quote"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.758758,
-      "last_hit_at": 1790846299.7587612
+      "created_at": 1791800536.6546433,
+      "last_hit_at": 1791800536.6546435
     },
     {
       "id": "info_campaigns",
       "canonical_query": "What is Nimbus Campaigns?",
-      "response": "Nimbus Campaigns is an email marketing automation platform to design responsive email campaigns, segment audiences based on behavior, and build multi-step customer journeys.",
+      "response": "Nimbus Campaigns is an email marketing platform for automated campaigns, audience segmentation, and customer journeys.",
       "category": "product",
       "examples": [
         "What is Nimbus Campaigns?",
@@ -65705,13 +65705,13 @@
         "campaigns"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.7599165,
-      "last_hit_at": 1790846299.7599168
+      "created_at": 1791800536.6553776,
+      "last_hit_at": 1791800536.6553779
     },
     {
       "id": "info_social",
       "canonical_query": "What is Nimbus Social?",
-      "response": "Nimbus Social is a unified social media management tool to draft, schedule, and publish posts across platforms while monitoring brand mentions and engagement analytics.",
+      "response": "Nimbus Social lets you schedule posts across platforms and track engagement analytics.",
       "category": "product",
       "examples": [
         "What is Nimbus Social?",
@@ -67655,13 +67655,13 @@
         "social"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.7610302,
-      "last_hit_at": 1790846299.7610307
+      "created_at": 1791800536.656792,
+      "last_hit_at": 1791800536.6567924
     },
     {
       "id": "info_sites",
       "canonical_query": "What is Nimbus Sites?",
-      "response": "Nimbus Sites is a visual landing page and website builder with mobile-optimized templates, integrated lead capture forms, and native A/B testing.",
+      "response": "Nimbus Sites is a visual landing page builder with mobile templates, lead capture forms, and A/B testing.",
       "category": "product",
       "examples": [
         "What is Nimbus Sites?",
@@ -69605,13 +69605,13 @@
         "sites"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.7618682,
-      "last_hit_at": 1790846299.7618682
+      "created_at": 1791800536.6578758,
+      "last_hit_at": 1791800536.6578758
     },
     {
       "id": "info_books",
       "canonical_query": "What is Nimbus Books?",
-      "response": "Nimbus Books simplifies business finances with automated double-entry accounting, bank reconciliation, tax-ready financial statements, and multi-currency support.",
+      "response": "Nimbus Books handles business accounting with bank reconciliation, financial statements, and multi-currency support.",
       "category": "product",
       "examples": [
         "What is Nimbus Books?",
@@ -71555,13 +71555,13 @@
         "books"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.7626915,
-      "last_hit_at": 1790846299.7626917
+      "created_at": 1791800536.6586995,
+      "last_hit_at": 1791800536.6586995
     },
     {
       "id": "info_invoice",
       "canonical_query": "What is Nimbus Invoice?",
-      "response": "Nimbus Invoice generates professional invoices, automates recurring billing, and accepts fast online payments with automated payment reminders.",
+      "response": "Nimbus Invoice generates professional invoices, automates recurring billing, and accepts online payments.",
       "category": "product",
       "examples": [
         "What is Nimbus Invoice?",
@@ -73505,13 +73505,13 @@
         "invoice"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.763698,
-      "last_hit_at": 1790846299.7636983
+      "created_at": 1791800536.659358,
+      "last_hit_at": 1791800536.659358
     },
     {
       "id": "info_expense",
       "canonical_query": "What is Nimbus Expense?",
-      "response": "Nimbus Expense streamlines corporate spend management with smart receipt scanning, multi-level approval workflows, and automated employee reimbursements.",
+      "response": "Nimbus Expense simplifies spend management with smart receipt scanning, approval workflows, and employee reimbursements.",
       "category": "product",
       "examples": [
         "What is Nimbus Expense?",
@@ -75455,13 +75455,13 @@
         "expense"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.764972,
-      "last_hit_at": 1790846299.7649724
+      "created_at": 1791800536.6598814,
+      "last_hit_at": 1791800536.6598814
     },
     {
       "id": "info_people",
       "canonical_query": "What is Nimbus People?",
-      "response": "Nimbus People is a centralized HRIS managing the entire employee lifecycle with digital onboarding, time-off tracking, document storage, and interactive company org charts.",
+      "response": "Nimbus People is a centralized HRIS for employee onboarding, time-off tracking, and interactive org charts.",
       "category": "product",
       "examples": [
         "What is Nimbus People?",
@@ -77405,13 +77405,13 @@
         "people"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.7658541,
-      "last_hit_at": 1790846299.7658544
+      "created_at": 1791800536.6603308,
+      "last_hit_at": 1791800536.660331
     },
     {
       "id": "info_recruit",
       "canonical_query": "What is Nimbus Recruit?",
-      "response": "Nimbus Recruit is an applicant tracking system that streamlines hiring with customizable candidate pipelines, job board syndication, resume parsing, and interview scheduling.",
+      "response": "Nimbus Recruit streamlines hiring with candidate pipelines, job board posting, resume parsing, and interview scheduling.",
       "category": "product",
       "examples": [
         "What is Nimbus Recruit?",
@@ -79355,13 +79355,13 @@
         "recruit"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.7666564,
-      "last_hit_at": 1790846299.7666569
+      "created_at": 1791800536.660763,
+      "last_hit_at": 1791800536.6607635
     },
     {
       "id": "info_payroll",
       "canonical_query": "What is Nimbus Payroll?",
-      "response": "Nimbus Payroll automates direct deposit payroll runs, payroll tax filings, and contractor payments with complete legal compliance.",
+      "response": "Nimbus Payroll automates direct deposit payroll runs, payroll tax filings, and contractor payments with complete compliance.",
       "category": "product",
       "examples": [
         "What is Nimbus Payroll?",
@@ -81305,13 +81305,13 @@
         "payroll"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.7674475,
-      "last_hit_at": 1790846299.767448
+      "created_at": 1791800536.6611838,
+      "last_hit_at": 1791800536.6611838
     },
     {
       "id": "info_desk",
       "canonical_query": "What is Nimbus Desk?",
-      "response": "Nimbus Desk is an omnichannel customer support helpdesk with shared ticketing inboxes, SLA tracking, intelligent routing, and escalation rules.",
+      "response": "Nimbus Desk is a customer support helpdesk with shared ticketing inboxes, SLA tracking, and intelligent routing.",
       "category": "product",
       "examples": [
         "What is Nimbus Desk?",
@@ -83255,13 +83255,13 @@
         "desk"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.7681704,
-      "last_hit_at": 1790846299.7681706
+      "created_at": 1791800536.6615863,
+      "last_hit_at": 1791800536.6615865
     },
     {
       "id": "info_chat",
       "canonical_query": "What is Nimbus Chat?",
-      "response": "Nimbus Chat provides live website chat and conversational AI bots to engage visitors, qualify inbound leads, and answer customer queries around the clock.",
+      "response": "Nimbus Chat provides live website chat and conversational AI bots to engage visitors and resolve queries 24/7.",
       "category": "product",
       "examples": [
         "What is Nimbus Chat?",
@@ -85205,13 +85205,13 @@
         "chat"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.7688813,
-      "last_hit_at": 1790846299.7688813
+      "created_at": 1791800536.6619864,
+      "last_hit_at": 1791800536.6619864
     },
     {
       "id": "info_knowledge",
       "canonical_query": "What is Nimbus Knowledge?",
-      "response": "Nimbus Knowledge enables companies to create, organize, and publish searchable self-service help centers, customer knowledge bases, and product documentation.",
+      "response": "Nimbus Knowledge lets you build searchable self-service help centers, customer knowledge bases, and product documentation.",
       "category": "product",
       "examples": [
         "What is Nimbus Knowledge?",
@@ -87155,13 +87155,13 @@
         "knowledge"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.7696533,
-      "last_hit_at": 1790846299.7696536
+      "created_at": 1791800536.6632018,
+      "last_hit_at": 1791800536.663202
     },
     {
       "id": "info_projects",
       "canonical_query": "What is Nimbus Projects?",
-      "response": "Nimbus Projects is a comprehensive project management solution featuring task tracking, interactive Gantt charts, sprint planning, and team workload allocation.",
+      "response": "Nimbus Projects features task tracking, Gantt charts, sprint planning, and team workload allocation.",
       "category": "product",
       "examples": [
         "What is Nimbus Projects?",
@@ -89105,13 +89105,13 @@
         "projects"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.7704499,
-      "last_hit_at": 1790846299.77045
+      "created_at": 1791800536.6647496,
+      "last_hit_at": 1791800536.6647499
     },
     {
       "id": "info_docs",
       "canonical_query": "What is Nimbus Docs?",
-      "response": "Nimbus Docs is a modern collaborative workspace for team documentation, meeting notes, and company wikis with real-time multiplayer editing and rich media embedding.",
+      "response": "Nimbus Docs is a modern collaborative workspace for team documentation and company wikis with real-time editing.",
       "category": "product",
       "examples": [
         "What is Nimbus Docs?",
@@ -92216,13 +92216,13 @@
         "docs"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.7717063,
-      "last_hit_at": 1790846299.7717066
+      "created_at": 1791800536.66613,
+      "last_hit_at": 1791800536.6661305
     },
     {
       "id": "info_boards",
       "canonical_query": "What is Nimbus Boards?",
-      "response": "Nimbus Boards offers agile visual workspaces combining structured Kanban sprint boards with freeform digital whiteboards for brainstorming and mapping workflows.",
+      "response": "Nimbus Boards combines agile Kanban sprint boards with digital whiteboards for brainstorming and workflows.",
       "category": "product",
       "examples": [
         "What is Nimbus Boards?",
@@ -94166,13 +94166,13 @@
         "boards"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.7724202,
-      "last_hit_at": 1790846299.7724204
+      "created_at": 1791800536.666636,
+      "last_hit_at": 1791800536.6666362
     },
     {
       "id": "info_analytics",
       "canonical_query": "What is Nimbus Analytics?",
-      "response": "Nimbus Analytics is a self-serve business intelligence tool to build interactive visual reports, model complex metrics, and uncover actionable business insights without code.",
+      "response": "Nimbus Analytics is a self-serve BI tool to build visual reports and uncover actionable insights without code.",
       "category": "product",
       "examples": [
         "What is Nimbus Analytics?",
@@ -96116,13 +96116,13 @@
         "analytics"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.773185,
-      "last_hit_at": 1790846299.7731853
+      "created_at": 1791800536.667063,
+      "last_hit_at": 1791800536.667063
     },
     {
       "id": "info_dashboards",
       "canonical_query": "What is Nimbus Dashboards?",
-      "response": "Nimbus Dashboards displays real-time operational metrics, team KPIs, and live status monitors with customizable widgets and instant threshold alerts.",
+      "response": "Nimbus Dashboards displays real-time operational metrics, team KPIs, and live status monitors with alerts.",
       "category": "product",
       "examples": [
         "What is Nimbus Dashboards?",
@@ -98066,13 +98066,13 @@
         "dashboards"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.7754285,
-      "last_hit_at": 1790846299.775429
+      "created_at": 1791800536.6675723,
+      "last_hit_at": 1791800536.6675723
     },
     {
       "id": "info_datapipe",
       "canonical_query": "What is Nimbus DataPipe?",
-      "response": "Nimbus DataPipe is a no-code ETL platform that connects cloud applications with data warehouses to extract, transform, and sync business data automatically.",
+      "response": "Nimbus DataPipe is a no-code ETL platform connecting cloud apps and data warehouses to sync business data.",
       "category": "product",
       "examples": [
         "What is Nimbus DataPipe?",
@@ -100016,13 +100016,13 @@
         "datapipe"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.776448,
-      "last_hit_at": 1790846299.7764485
+      "created_at": 1791800536.6680307,
+      "last_hit_at": 1791800536.668031
     },
     {
       "id": "info_vault",
       "canonical_query": "What is Nimbus Vault?",
-      "response": "Nimbus Vault securely manages company passwords, API keys, and environment secrets with zero-knowledge AES-256 encryption and granular role-based access.",
+      "response": "Nimbus Vault securely manages passwords, API keys, and secrets with AES-256 encryption and role-based access.",
       "category": "product",
       "examples": [
         "What is Nimbus Vault?",
@@ -101966,13 +101966,13 @@
         "vault"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.7772467,
-      "last_hit_at": 1790846299.777247
+      "created_at": 1791800536.6684568,
+      "last_hit_at": 1791800536.6684568
     },
     {
       "id": "info_sso",
       "canonical_query": "What is Nimbus SSO?",
-      "response": "Nimbus SSO provides enterprise single sign-on, identity governance, multi-factor authentication, and automated SCIM provisioning across all your company applications.",
+      "response": "Nimbus SSO provides enterprise single sign-on, multi-factor authentication, and automated identity provisioning.",
       "category": "product",
       "examples": [
         "What is Nimbus SSO?",
@@ -103916,13 +103916,13 @@
         "sso"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.7780519,
-      "last_hit_at": 1790846299.778052
+      "created_at": 1791800536.6688673,
+      "last_hit_at": 1791800536.6688676
     },
     {
       "id": "info_endpoint",
       "canonical_query": "What is Nimbus Endpoint?",
-      "response": "Nimbus Endpoint secures and monitors all corporate laptops, desktops, and mobile devices with next-generation antivirus, remote wipe, USB device controls, and compliance reporting.",
+      "response": "Nimbus Endpoint secures company laptops and mobile devices with antivirus, remote wipe, and compliance reporting.",
       "category": "product",
       "examples": [
         "What is Nimbus Endpoint?",
@@ -105866,13 +105866,13 @@
         "endpoint"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.7793472,
-      "last_hit_at": 1790846299.7793474
+      "created_at": 1791800536.6698096,
+      "last_hit_at": 1791800536.6698098
     },
     {
       "id": "pricing_crm",
       "canonical_query": "How much does Nimbus CRM cost?",
-      "response": "Nimbus CRM starts at fifteen dollars per user per month on the Starter tier, or twelve dollars billed annually. Professional is forty-five dollars per user per month, and a forever free tier is also included.",
+      "response": "Nimbus CRM starts at fifteen dollars per user monthly, twelve annually, and forty-five on Professional, plus a free tier.",
       "category": "product",
       "examples": [
         "How much does Nimbus CRM cost?",
@@ -108590,13 +108590,13 @@
         "crm"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.780619,
-      "last_hit_at": 1790846299.7806194
+      "created_at": 1791800536.6724467,
+      "last_hit_at": 1791800536.6724467
     },
     {
       "id": "pricing_leads",
       "canonical_query": "How much does Nimbus Leads cost?",
-      "response": "Nimbus Leads starts at twenty-five dollars per user per month for Starter, or twenty dollars billed annually. Professional is sixty-five dollars per user per month with power dialer and lead scoring.",
+      "response": "Nimbus Leads starts at twenty-five dollars per user monthly, twenty annually, and sixty-five on Professional.",
       "category": "product",
       "examples": [
         "How much does Nimbus Leads cost?",
@@ -110927,13 +110927,13 @@
         "leads"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.7815757,
-      "last_hit_at": 1790846299.781576
+      "created_at": 1791800536.6738539,
+      "last_hit_at": 1791800536.673854
     },
     {
       "id": "pricing_quote",
       "canonical_query": "How much does Nimbus Quote cost?",
-      "response": "Nimbus Quote starts at twenty dollars per user per month for Starter, or sixteen dollars billed annually. Professional is fifty dollars per user per month with CPQ and electronic signatures.",
+      "response": "Nimbus Quote starts at twenty dollars per user monthly, sixteen annually, and fifty on Professional.",
       "category": "product",
       "examples": [
         "How much does Nimbus Quote cost?",
@@ -112877,13 +112877,13 @@
         "quote"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.7824485,
-      "last_hit_at": 1790846299.782449
+      "created_at": 1791800536.6746345,
+      "last_hit_at": 1791800536.6746347
     },
     {
       "id": "pricing_campaigns",
       "canonical_query": "How much does Nimbus Campaigns cost?",
-      "response": "Nimbus Campaigns starts at fifteen dollars per user per month for Starter, or twelve dollars billed annually. Professional is forty-five dollars per user per month with email marketing automation.",
+      "response": "Nimbus Campaigns starts at fifteen dollars per user monthly, twelve annually, and forty-five on Professional.",
       "category": "product",
       "examples": [
         "How much does Nimbus Campaigns cost?",
@@ -114827,13 +114827,13 @@
         "campaigns"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.7833545,
-      "last_hit_at": 1790846299.7833545
+      "created_at": 1791800536.675349,
+      "last_hit_at": 1791800536.67535
     },
     {
       "id": "pricing_social",
       "canonical_query": "How much does Nimbus Social cost?",
-      "response": "Nimbus Social starts at twenty dollars per user per month for Starter, or sixteen dollars billed annually. Professional is fifty dollars per user per month with cross-platform scheduling and analytics.",
+      "response": "Nimbus Social starts at twenty dollars per user monthly, sixteen annually, and fifty on Professional.",
       "category": "product",
       "examples": [
         "How much does Nimbus Social cost?",
@@ -116777,13 +116777,13 @@
         "social"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.7842484,
-      "last_hit_at": 1790846299.7842486
+      "created_at": 1791800536.6760612,
+      "last_hit_at": 1791800536.6760612
     },
     {
       "id": "pricing_sites",
       "canonical_query": "How much does Nimbus Sites cost?",
-      "response": "Nimbus Sites starts at twenty-five dollars per user per month for Starter, or twenty dollars billed annually. Professional is sixty dollars per user per month with custom domains and A/B testing.",
+      "response": "Nimbus Sites starts at twenty-five dollars per user monthly, twenty annually, and sixty on Professional.",
       "category": "product",
       "examples": [
         "How much does Nimbus Sites cost?",
@@ -118727,13 +118727,13 @@
         "sites"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.7851796,
-      "last_hit_at": 1790846299.7851799
+      "created_at": 1791800536.6779733,
+      "last_hit_at": 1791800536.6779735
     },
     {
       "id": "pricing_books",
       "canonical_query": "How much does Nimbus Books cost?",
-      "response": "Nimbus Books starts at fifteen dollars per user per month for Starter, or twelve dollars billed annually. Professional is forty dollars per month with multi-currency and double-entry accounting.",
+      "response": "Nimbus Books starts at fifteen dollars per user monthly, twelve annually, and forty on Professional.",
       "category": "product",
       "examples": [
         "How much does Nimbus Books cost?",
@@ -121064,13 +121064,13 @@
         "books"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.786325,
-      "last_hit_at": 1790846299.7863252
+      "created_at": 1791800536.6790056,
+      "last_hit_at": 1791800536.6790056
     },
     {
       "id": "pricing_invoice",
       "canonical_query": "How much does Nimbus Invoice cost?",
-      "response": "Nimbus Invoice starts at ten dollars per user per month for Starter, or eight dollars billed annually. Professional is thirty dollars per user per month with automated recurring billing.",
+      "response": "Nimbus Invoice starts at ten dollars per user monthly, eight annually, and thirty on Professional.",
       "category": "product",
       "examples": [
         "How much does Nimbus Invoice cost?",
@@ -123401,13 +123401,13 @@
         "invoice"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.7874112,
-      "last_hit_at": 1790846299.7874117
+      "created_at": 1791800536.6804113,
+      "last_hit_at": 1791800536.6804113
     },
     {
       "id": "pricing_expense",
       "canonical_query": "How much does Nimbus Expense cost?",
-      "response": "Nimbus Expense starts at fifteen dollars per user per month for Starter, or twelve dollars billed annually. Professional is thirty-five dollars per user per month with smart receipt scanning and corporate cards.",
+      "response": "Nimbus Expense starts at fifteen dollars per user monthly, twelve annually, and thirty-five on Professional.",
       "category": "product",
       "examples": [
         "How much does Nimbus Expense cost?",
@@ -125351,13 +125351,13 @@
         "expense"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.7883863,
-      "last_hit_at": 1790846299.7883863
+      "created_at": 1791800536.6809306,
+      "last_hit_at": 1791800536.6809309
     },
     {
       "id": "pricing_people",
       "canonical_query": "How much does Nimbus People cost?",
-      "response": "Nimbus People starts at ten dollars per user per month for Starter, or eight dollars billed annually. Professional is thirty dollars per user per month with performance reviews and time tracking.",
+      "response": "Nimbus People starts at ten dollars per user monthly, eight annually, and thirty on Professional.",
       "category": "product",
       "examples": [
         "How much does Nimbus People cost?",
@@ -127688,13 +127688,13 @@
         "people"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.789457,
-      "last_hit_at": 1790846299.7894573
+      "created_at": 1791800536.681497,
+      "last_hit_at": 1791800536.681497
     },
     {
       "id": "pricing_recruit",
       "canonical_query": "How much does Nimbus Recruit cost?",
-      "response": "Nimbus Recruit starts at twenty-five dollars per user per month for Starter, or twenty dollars billed annually. Professional is sixty dollars per user per month with applicant tracking and job board syndication.",
+      "response": "Nimbus Recruit starts at twenty-five dollars per user monthly, twenty annually, and sixty on Professional.",
       "category": "product",
       "examples": [
         "How much does Nimbus Recruit cost?",
@@ -129638,13 +129638,13 @@
         "recruit"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.7913926,
-      "last_hit_at": 1790846299.791393
+      "created_at": 1791800536.6819763,
+      "last_hit_at": 1791800536.6819763
     },
     {
       "id": "pricing_payroll",
       "canonical_query": "How much does Nimbus Payroll cost?",
-      "response": "Nimbus Payroll starts at twenty dollars per user per month for Starter, or sixteen dollars billed annually. Professional is fifty dollars per month with direct deposit and automated tax filing.",
+      "response": "Nimbus Payroll starts at twenty dollars per user monthly, sixteen annually, and fifty on Professional.",
       "category": "product",
       "examples": [
         "How much does Nimbus Payroll cost?",
@@ -132362,13 +132362,13 @@
         "payroll"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.7935364,
-      "last_hit_at": 1790846299.7935364
+      "created_at": 1791800536.6825888,
+      "last_hit_at": 1791800536.6825888
     },
     {
       "id": "pricing_desk",
       "canonical_query": "How much does Nimbus Desk cost?",
-      "response": "Nimbus Desk starts at twenty dollars per user per month for Starter, or sixteen dollars billed annually. Professional is fifty dollars per user per month with multi-channel ticketing and SLA management.",
+      "response": "Nimbus Desk starts at twenty dollars per user monthly, sixteen annually, and fifty on Professional.",
       "category": "product",
       "examples": [
         "How much does Nimbus Desk cost?",
@@ -134699,13 +134699,13 @@
         "desk"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.7946196,
-      "last_hit_at": 1790846299.7946198
+      "created_at": 1791800536.68331,
+      "last_hit_at": 1791800536.6833105
     },
     {
       "id": "pricing_chat",
       "canonical_query": "How much does Nimbus Chat cost?",
-      "response": "Nimbus Chat starts at fifteen dollars per user per month for Starter, or twelve dollars billed annually. Professional is forty-five dollars per month with proactive chat triggers and AI bots.",
+      "response": "Nimbus Chat starts at fifteen dollars per user monthly, twelve annually, and forty-five on Professional.",
       "category": "product",
       "examples": [
         "How much does Nimbus Chat cost?",
@@ -136649,13 +136649,13 @@
         "chat"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.796195,
-      "last_hit_at": 1790846299.7961953
+      "created_at": 1791800536.6849089,
+      "last_hit_at": 1791800536.6849093
     },
     {
       "id": "pricing_knowledge",
       "canonical_query": "How much does Nimbus Knowledge cost?",
-      "response": "Nimbus Knowledge starts at fifteen dollars per user per month for Starter, or twelve dollars billed annually. Professional is thirty-five dollars per month with custom branding and multilingual articles.",
+      "response": "Nimbus Knowledge starts at fifteen dollars per user monthly, twelve annually, and thirty-five on Professional.",
       "category": "product",
       "examples": [
         "How much does Nimbus Knowledge cost?",
@@ -138599,13 +138599,13 @@
         "knowledge"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.7972634,
-      "last_hit_at": 1790846299.7972636
+      "created_at": 1791800536.6857708,
+      "last_hit_at": 1791800536.685771
     },
     {
       "id": "pricing_projects",
       "canonical_query": "How much does Nimbus Projects cost?",
-      "response": "Nimbus Projects starts at ten dollars per user per month for Starter, or eight dollars billed annually. Professional is thirty dollars per user per month with Gantt charts and workload management.",
+      "response": "Nimbus Projects starts at ten dollars per user monthly, eight annually, and thirty on Professional.",
       "category": "product",
       "examples": [
         "How much does Nimbus Projects cost?",
@@ -140936,13 +140936,13 @@
         "projects"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.7984276,
-      "last_hit_at": 1790846299.7984278
+      "created_at": 1791800536.6870399,
+      "last_hit_at": 1791800536.68704
     },
     {
       "id": "pricing_docs",
       "canonical_query": "How much does Nimbus Docs cost?",
-      "response": "Nimbus Docs starts at eight dollars per user per month for Starter, or six dollars and forty cents billed annually. Professional is fifteen dollars per user per month, and a forever free tier is also included.",
+      "response": "Nimbus Docs starts at eight dollars per user monthly, six-forty annually, and fifteen on Professional, plus a free tier.",
       "category": "product",
       "examples": [
         "How much does Nimbus Docs cost?",
@@ -143660,13 +143660,13 @@
         "docs"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.799754,
-      "last_hit_at": 1790846299.7997549
+      "created_at": 1791800536.6877244,
+      "last_hit_at": 1791800536.6877244
     },
     {
       "id": "pricing_boards",
       "canonical_query": "How much does Nimbus Boards cost?",
-      "response": "Nimbus Boards starts at twelve dollars per user per month for Starter, or nine dollars and sixty cents billed annually. Professional is twenty-five dollars per month with unlimited boards and custom workflows.",
+      "response": "Nimbus Boards starts at twelve dollars per user monthly, nine-sixty annually, and twenty-five on Professional.",
       "category": "product",
       "examples": [
         "How much does Nimbus Boards cost?",
@@ -145610,13 +145610,13 @@
         "boards"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.8006382,
-      "last_hit_at": 1790846299.8006384
+      "created_at": 1791800536.688181,
+      "last_hit_at": 1791800536.688181
     },
     {
       "id": "pricing_analytics",
       "canonical_query": "How much does Nimbus Analytics cost?",
-      "response": "Nimbus Analytics starts at fifteen dollars per user per month for Starter, or twelve dollars billed annually. Professional is forty-five dollars per user per month with advanced data modeling and visual dashboards.",
+      "response": "Nimbus Analytics starts at fifteen dollars per user monthly, twelve annually, and forty-five on Professional.",
       "category": "product",
       "examples": [
         "How much does Nimbus Analytics cost?",
@@ -147560,13 +147560,13 @@
         "analytics"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.801608,
-      "last_hit_at": 1790846299.801608
+      "created_at": 1791800536.6886795,
+      "last_hit_at": 1791800536.6886795
     },
     {
       "id": "pricing_dashboards",
       "canonical_query": "How much does Nimbus Dashboards cost?",
-      "response": "Nimbus Dashboards starts at ten dollars per user per month for Starter, or eight dollars billed annually. Professional is thirty dollars per user per month with live TV displays and scheduled email snapshots.",
+      "response": "Nimbus Dashboards starts at ten dollars per user monthly, eight annually, and thirty on Professional.",
       "category": "product",
       "examples": [
         "How much does Nimbus Dashboards cost?",
@@ -149510,13 +149510,13 @@
         "dashboards"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.8026216,
-      "last_hit_at": 1790846299.8026216
+      "created_at": 1791800536.68917,
+      "last_hit_at": 1791800536.68917
     },
     {
       "id": "pricing_datapipe",
       "canonical_query": "How much does Nimbus DataPipe cost?",
-      "response": "Nimbus DataPipe starts at twenty-five dollars per user per month for Starter, or twenty dollars billed annually. Professional is sixty-five dollars per user per month with real-time sync and custom connectors.",
+      "response": "Nimbus DataPipe starts at twenty-five dollars per user monthly, twenty annually, and sixty-five on Professional.",
       "category": "product",
       "examples": [
         "How much does Nimbus DataPipe cost?",
@@ -151460,13 +151460,13 @@
         "datapipe"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.8035307,
-      "last_hit_at": 1790846299.803531
+      "created_at": 1791800536.6896737,
+      "last_hit_at": 1791800536.689674
     },
     {
       "id": "pricing_vault",
       "canonical_query": "How much does Nimbus Vault cost?",
-      "response": "Nimbus Vault starts at ten dollars per user per month for Starter, or eight dollars billed annually. Professional is twenty-five dollars per month with secret rotation and automated audit logging.",
+      "response": "Nimbus Vault starts at ten dollars per user monthly, eight annually, and twenty-five on Professional.",
       "category": "product",
       "examples": [
         "How much does Nimbus Vault cost?",
@@ -153410,13 +153410,13 @@
         "vault"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.804409,
-      "last_hit_at": 1790846299.8044093
+      "created_at": 1791800536.690131,
+      "last_hit_at": 1791800536.690131
     },
     {
       "id": "pricing_sso",
       "canonical_query": "How much does Nimbus SSO cost?",
-      "response": "Nimbus SSO starts at fifteen dollars per user per month for Starter, or twelve dollars billed annually. Professional is thirty-five dollars per month with SAML 2.0 and automated user provisioning.",
+      "response": "Nimbus SSO starts at fifteen dollars per user monthly, twelve annually, and thirty-five on Professional.",
       "category": "product",
       "examples": [
         "How much does Nimbus SSO cost?",
@@ -155360,13 +155360,13 @@
         "sso"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.8052602,
-      "last_hit_at": 1790846299.8052602
+      "created_at": 1791800536.6918273,
+      "last_hit_at": 1791800536.6918278
     },
     {
       "id": "pricing_endpoint",
       "canonical_query": "How much does Nimbus Endpoint cost?",
-      "response": "Nimbus Endpoint starts at twenty dollars per user per month for Starter, or sixteen dollars billed annually. Professional is forty-five dollars per user per month with remote device management and patch deployment.",
+      "response": "Nimbus Endpoint starts at twenty dollars per user monthly, sixteen annually, and forty-five on Professional.",
       "category": "product",
       "examples": [
         "How much does Nimbus Endpoint cost?",
@@ -157310,8 +157310,795 @@
         "endpoint"
       ],
       "hit_count": 0,
-      "created_at": 1790846299.8061776,
-      "last_hit_at": 1790846299.8061779
+      "created_at": 1791800536.6930277,
+      "last_hit_at": 1791800536.6930282
+    },
+    {
+      "id": "dyn_c7c306ab46",
+      "canonical_query": "Do you integrate with Salesforce?",
+      "response": "Yes, Nimbus CRM includes 1-click import and bi-directional sync with Salesforce.",
+      "category": "dynamic",
+      "examples": [
+        "Do you integrate with Salesforce?"
+      ],
+      "embedding": [
+        0.0,
+        0.0,
+        0.23236970603466034,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.23236970603466034,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.06971091777086258,
+        0.11618485301733017,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.11618485301733017,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.11618485301733017,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.11618485301733017,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.06971091777086258,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.11618485301733017,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.11618485301733017,
+        0.0,
+        0.0,
+        0.11618485301733017,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.06971091777086258,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.11618485301733017,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.11618485301733017,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.4647394120693207,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.4647394120693207,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.23236970603466034,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.23236970603466034,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.11618485301733017,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.11618485301733017,
+        0.0,
+        0.11618485301733017,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.11618485301733017,
+        0.0,
+        0.0,
+        0.0,
+        0.11618485301733017,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.11618485301733017,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.11618485301733017,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.11618485301733017,
+        0.11618485301733017,
+        0.11618485301733017,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.11618485301733017,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.11618485301733017,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.11618485301733017,
+        0.0,
+        0.0,
+        0.0,
+        0.11618485301733017,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.11618485301733017,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.11618485301733017
+      ],
+      "example_embeddings": [
+        [
+          0.0,
+          0.0,
+          0.23236970603466034,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.23236970603466034,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.06971091777086258,
+          0.11618485301733017,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.11618485301733017,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.11618485301733017,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.11618485301733017,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.06971091777086258,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.11618485301733017,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.11618485301733017,
+          0.0,
+          0.0,
+          0.11618485301733017,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.06971091777086258,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.11618485301733017,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.11618485301733017,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.4647394120693207,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.4647394120693207,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.23236970603466034,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.23236970603466034,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.11618485301733017,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.11618485301733017,
+          0.0,
+          0.11618485301733017,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.11618485301733017,
+          0.0,
+          0.0,
+          0.0,
+          0.11618485301733017,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.11618485301733017,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.11618485301733017,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.11618485301733017,
+          0.11618485301733017,
+          0.11618485301733017,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.11618485301733017,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.11618485301733017,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.11618485301733017,
+          0.0,
+          0.0,
+          0.0,
+          0.11618485301733017,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.11618485301733017,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.11618485301733017
+        ]
+      ],
+      "required_entities": [],
+      "hit_count": 1,
+      "created_at": 1791369125.390264,
+      "last_hit_at": 1791369125.3902643
     }
   ]
 }
